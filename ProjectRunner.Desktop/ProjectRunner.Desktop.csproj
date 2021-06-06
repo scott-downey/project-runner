@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectRunner.Infra.Data\ProjectRunner.Infra.Data.csproj" />
+    <ProjectReference Include="..\ProjectRunner\ProjectRunner.csproj" />
+  </ItemGroup>
+
 </Project>
