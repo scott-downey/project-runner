@@ -30,18 +30,22 @@ namespace ProjectRunner.Desktop.UserControls
         private void InitializeComponent()
         {
             this.PnlButtons = new System.Windows.Forms.Panel();
-            this.BtnManage = new System.Windows.Forms.Button();
             this.BtnAction = new System.Windows.Forms.Button();
+            this.MSManage = new System.Windows.Forms.MenuStrip();
+            this.MSManageItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSManageEditItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSManageRemoveItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlDescription = new System.Windows.Forms.Panel();
             this.LblProject = new System.Windows.Forms.Label();
             this.PnlButtons.SuspendLayout();
+            this.MSManage.SuspendLayout();
             this.PnlDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlButtons
             // 
-            this.PnlButtons.Controls.Add(this.BtnManage);
             this.PnlButtons.Controls.Add(this.BtnAction);
+            this.PnlButtons.Controls.Add(this.MSManage);
             this.PnlButtons.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnlButtons.Location = new System.Drawing.Point(390, 0);
             this.PnlButtons.Margin = new System.Windows.Forms.Padding(0);
@@ -49,16 +53,6 @@ namespace ProjectRunner.Desktop.UserControls
             this.PnlButtons.Padding = new System.Windows.Forms.Padding(15);
             this.PnlButtons.Size = new System.Drawing.Size(260, 80);
             this.PnlButtons.TabIndex = 1;
-            // 
-            // BtnManage
-            // 
-            this.BtnManage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnManage.Location = new System.Drawing.Point(142, 22);
-            this.BtnManage.Name = "BtnManage";
-            this.BtnManage.Size = new System.Drawing.Size(100, 40);
-            this.BtnManage.TabIndex = 1;
-            this.BtnManage.Text = "Manage";
-            this.BtnManage.UseVisualStyleBackColor = true;
             // 
             // BtnAction
             // 
@@ -69,6 +63,43 @@ namespace ProjectRunner.Desktop.UserControls
             this.BtnAction.TabIndex = 0;
             this.BtnAction.Text = "Run";
             this.BtnAction.UseVisualStyleBackColor = true;
+            // 
+            // MSManage
+            // 
+            this.MSManage.AutoSize = false;
+            this.MSManage.Dock = System.Windows.Forms.DockStyle.None;
+            this.MSManage.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.MSManage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MSManageItems});
+            this.MSManage.Location = new System.Drawing.Point(145, 20);
+            this.MSManage.Name = "MSManage";
+            this.MSManage.Padding = new System.Windows.Forms.Padding(0);
+            this.MSManage.Size = new System.Drawing.Size(100, 40);
+            this.MSManage.TabIndex = 1;
+            // 
+            // MSManageItems
+            // 
+            this.MSManageItems.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MSManageEditItem,
+            this.MSManageRemoveItem});
+            this.MSManageItems.Name = "MSManageItems";
+            this.MSManageItems.Padding = new System.Windows.Forms.Padding(0);
+            this.MSManageItems.Size = new System.Drawing.Size(93, 40);
+            this.MSManageItems.Text = "Manage";
+            // 
+            // MSManageEditItem
+            // 
+            this.MSManageEditItem.Name = "MSManageEditItem";
+            this.MSManageEditItem.Size = new System.Drawing.Size(315, 40);
+            this.MSManageEditItem.Text = "Edit";
+            this.MSManageEditItem.Click += new System.EventHandler(this.MSManageEditItem_Click);
+            // 
+            // MSManageRemoveItem
+            // 
+            this.MSManageRemoveItem.Name = "MSManageRemoveItem";
+            this.MSManageRemoveItem.Size = new System.Drawing.Size(315, 40);
+            this.MSManageRemoveItem.Text = "Remove";
+            this.MSManageRemoveItem.Click += new System.EventHandler(this.MSManageRemoveItem_Click);
             // 
             // PnlDescription
             // 
@@ -102,6 +133,8 @@ namespace ProjectRunner.Desktop.UserControls
             this.Name = "UCProject";
             this.Size = new System.Drawing.Size(650, 80);
             this.PnlButtons.ResumeLayout(false);
+            this.MSManage.ResumeLayout(false);
+            this.MSManage.PerformLayout();
             this.PnlDescription.ResumeLayout(false);
             this.PnlDescription.PerformLayout();
             this.ResumeLayout(false);
@@ -111,9 +144,12 @@ namespace ProjectRunner.Desktop.UserControls
         #endregion
 
         private System.Windows.Forms.Panel PnlButtons;
-        private System.Windows.Forms.Button BtnManage;
         private System.Windows.Forms.Button BtnAction;
         private System.Windows.Forms.Panel PnlDescription;
         private System.Windows.Forms.Label LblProject;
+        private System.Windows.Forms.MenuStrip MSManage;
+        private System.Windows.Forms.ToolStripMenuItem MSManageItems;
+        private System.Windows.Forms.ToolStripMenuItem MSManageEditItem;
+        private System.Windows.Forms.ToolStripMenuItem MSManageRemoveItem;
     }
 }

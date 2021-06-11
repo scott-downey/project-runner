@@ -19,10 +19,8 @@ namespace ProjectRunner.Desktop.Forms
 
         private void BtnAddProject_Click(object sender, System.EventArgs e)
         {
-            Form projectForm = new ProjectForm
-            {
-                StartPosition = FormStartPosition.CenterParent
-            };
+            Form projectForm = new ProjectForm { StartPosition = FormStartPosition.CenterParent };
+            projectForm.FormClosed += (object? sender, FormClosedEventArgs e) => LoadProjectsEvent(sender, e);
             projectForm.ShowDialog();
         }
 
@@ -31,17 +29,24 @@ namespace ProjectRunner.Desktop.Forms
             var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
             var projects = service.All();
 
+            FlPProjects.Controls.Clear();
+
             foreach (var project in projects)
             {
-                UCProject ucProject = new UCProject(project);
+                UCProject ucProject = new(project) { ManageEndActionEvent = LoadProjectsEvent };
                 ucProject.BorderStyle = BorderStyle.FixedSingle;
                 ucProject.Margin = new()
                 {
-                    Left = (int)Math.Floor(((decimal)(FlPProjects.Width - ucProject.Width) / 2)),
+                    Left = (int)Math.Floor(((decimal)(PnlProjects.Width - ucProject.Width) / 2)),
                     Top = 16
                 };
                 FlPProjects.Controls.Add(ucProject);
             }
+        }
+
+        private void LoadProjectsEvent(object? sender, EventArgs e)
+        {
+            LoadProjects();
         }
     }
 }

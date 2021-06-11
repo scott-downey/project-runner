@@ -12,12 +12,22 @@ namespace ProjectRunner.Desktop.Forms
     public partial class ProjectForm : Form
     {
         private IService<Project> _service;
+        private int _projectId;
 
         public ProjectForm()
         {
             InitializeComponent();
 
             _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+        }
+
+        public ProjectForm(Project project)
+        {
+            InitializeComponent();
+
+            _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+
+            LoadProject(project);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -29,6 +39,11 @@ namespace ProjectRunner.Desktop.Forms
                 Command = TbCommand.Text.Trim()
             };
 
+            if (_projectId > 0)
+            {
+                project.Id = _projectId;
+            }
+
             try
             {
                 _service.Save<ProjectValidator>(project);
@@ -36,10 +51,17 @@ namespace ProjectRunner.Desktop.Forms
                 Close();
             } catch (Exception ex)
             {
-                string message = ex.Message;
-                message = (ex.InnerException != null) ? message + Environment.NewLine + ex.InnerException.Message : message;
-                MessageBox.Show(message);
+                MessageBox.Show(Utils.HandleExceptionMessage(ex));
             } 
+        }
+
+        private void LoadProject(Project project)
+        {
+            _projectId = project.Id;
+
+            TbName.Text = project.Name;
+            TbPath.Text = project.Path;
+            TbCommand.Text = project.Command;
         }
     }
 }
