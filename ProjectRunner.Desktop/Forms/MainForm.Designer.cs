@@ -31,7 +31,7 @@ namespace ProjectRunner.Desktop.Forms
         {
             this.BtnAddProject = new System.Windows.Forms.Button();
             this.PnlTopControls = new System.Windows.Forms.Panel();
-            this.LvProjects = new System.Windows.Forms.ListView();
+            this.FlPProjects = new System.Windows.Forms.FlowLayoutPanel();
             this.PnlTopControls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,30 +58,29 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlTopControls.Size = new System.Drawing.Size(776, 60);
             this.PnlTopControls.TabIndex = 1;
             // 
-            // LvProjects
+            // FlPProjects
             // 
-            this.LvProjects.BackColor = System.Drawing.SystemColors.Control;
-            this.LvProjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LvProjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LvProjects.HideSelection = false;
-            this.LvProjects.Location = new System.Drawing.Point(0, 60);
-            this.LvProjects.Margin = new System.Windows.Forms.Padding(6);
-            this.LvProjects.Name = "LvProjects";
-            this.LvProjects.Size = new System.Drawing.Size(776, 426);
-            this.LvProjects.TabIndex = 2;
-            this.LvProjects.UseCompatibleStateImageBehavior = false;
+            this.FlPProjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlPProjects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlPProjects.Location = new System.Drawing.Point(0, 60);
+            this.FlPProjects.Margin = new System.Windows.Forms.Padding(0);
+            this.FlPProjects.Name = "FlPProjects";
+            this.FlPProjects.Padding = new System.Windows.Forms.Padding(6);
+            this.FlPProjects.Size = new System.Drawing.Size(776, 426);
+            this.FlPProjects.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 536);
-            this.Controls.Add(this.LvProjects);
+            this.Controls.Add(this.FlPProjects);
             this.Controls.Add(this.PnlTopControls);
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.PnlTopControls.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -92,6 +91,6 @@ namespace ProjectRunner.Desktop.Forms
 
         private System.Windows.Forms.Button BtnAddProject;
         private System.Windows.Forms.Panel PnlTopControls;
-        private System.Windows.Forms.ListView LvProjects;
+        private System.Windows.Forms.FlowLayoutPanel FlPProjects;
     }
 }
