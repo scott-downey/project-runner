@@ -91,7 +91,7 @@ namespace ProjectRunner.Desktop.Forms
             this.ClientSize = new System.Drawing.Size(776, 536);
             this.Controls.Add(this.PnlProjects);
             this.Controls.Add(this.PnlTopControls);
-            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MaximumSize = new System.Drawing.Size(800, 1200);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);

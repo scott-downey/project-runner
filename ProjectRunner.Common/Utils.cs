@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectRunner.Desktop
+namespace ProjectRunner.Common
 {
     public class Utils
     {

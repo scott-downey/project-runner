@@ -20,7 +20,7 @@ namespace ProjectRunner.Infra.Data.Mapping
                .IsRequired()
                .HasColumnName("Path")
                .HasColumnType("Varchar(255)");
-            builder.Property(prop => prop.Command)
+            builder.Property(prop => prop.ExecutableArguments)
                 .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired()
                 .HasColumnName("Command")

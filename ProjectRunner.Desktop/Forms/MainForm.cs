@@ -17,13 +17,12 @@ namespace ProjectRunner.Desktop.Forms
             LoadProjects();
         }
 
-        private void BtnAddProject_Click(object sender, System.EventArgs e)
+        private void BtnAddProject_Click(object sender, EventArgs e)
         {
-            Form projectForm = new ProjectForm { StartPosition = FormStartPosition.CenterParent };
-            projectForm.FormClosed += (object? sender, FormClosedEventArgs e) => LoadProjectsEvent(sender, e);
+            ProjectForm projectForm = new() { StartPosition = FormStartPosition.CenterParent };
+            projectForm.OnProjectSaved = AddProject;
             projectForm.ShowDialog();
         }
-
         private void LoadProjects()
         {
             var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
@@ -33,20 +32,36 @@ namespace ProjectRunner.Desktop.Forms
 
             foreach (var project in projects)
             {
-                UCProject ucProject = new(project) { ManageEndActionEvent = LoadProjectsEvent };
-                ucProject.BorderStyle = BorderStyle.FixedSingle;
-                ucProject.Margin = new()
-                {
-                    Left = (int)Math.Floor(((decimal)(PnlProjects.Width - ucProject.Width) / 2)),
-                    Top = 16
-                };
-                FlPProjects.Controls.Add(ucProject);
+                AddProject(project);
             }
         }
 
-        private void LoadProjectsEvent(object? sender, EventArgs e)
+        private void AddProject(Project project)
         {
-            LoadProjects();
+
+            UCProject ucProject = new(project) { EditActionEvent = EditProjectEvent, RemoveActionEvent = RemoveProjectEvent };
+            ucProject.MinimumSize = new(PnlProjects.Width - 70, ucProject.MinimumSize.Height);
+            ucProject.BorderStyle = BorderStyle.FixedSingle;
+            ucProject.Margin = new() { Left = 35, Top = 16 };
+            Control[] children = ucProject.Controls.Find("PnlRunningLog", true);
+
+            if (children.Length > 0)
+            {
+                children[0].MinimumSize = new(ucProject.MinimumSize.Width, children[0].MinimumSize.Height);
+            }
+
+            FlPProjects.Controls.Add(ucProject);
+        }
+
+
+        private void EditProjectEvent(UCProject sender, Project project)
+        {
+            sender.SetProject(project);
+        }
+
+        private void RemoveProjectEvent(UCProject sender)
+        {
+            FlPProjects.Controls.Remove(sender);
         }
     }
 }

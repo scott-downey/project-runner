@@ -1,11 +1,8 @@
 ﻿using ProjectRunner.Entities;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectRunner.Infra.Data.Repository
 {

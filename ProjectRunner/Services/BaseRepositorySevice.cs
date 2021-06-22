@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ProjectRunner.Services
 {
-    public class BaseService<Entity> : IService<Entity> where Entity : BaseEntity
+    public class BaseService<Entity> : IRepositoryService<Entity> where Entity : BaseEntity
     {
         private readonly IRepository<Entity> _repository;
 

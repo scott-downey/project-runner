@@ -15,9 +15,9 @@ namespace ProjectRunner.Validators
                 .NotEmpty().WithMessage("Path is required.")
                 .NotNull().WithMessage("Path is required.");
 
-            RuleFor(c => c.Command)
-                .NotEmpty().WithMessage("Command is required.")
-                .NotNull().WithMessage("Command is required.");
+            RuleFor(c => c.Executable)
+                .NotEmpty().WithMessage("Executable is required.")
+                .NotNull().WithMessage("Executable is required.");
         }
     }
 }

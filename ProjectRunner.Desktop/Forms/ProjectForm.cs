@@ -1,4 +1,5 @@
-﻿using ProjectRunner.Entities;
+﻿using ProjectRunner.Common;
+using ProjectRunner.Entities;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
 using ProjectRunner.Interfaces;
@@ -9,10 +10,13 @@ using System.Windows.Forms;
 
 namespace ProjectRunner.Desktop.Forms
 {
+    public delegate void OnProjectSaved(Project project);
+
     public partial class ProjectForm : Form
     {
-        private IService<Project> _service;
-        private int _projectId;
+        public OnProjectSaved OnProjectSaved;
+        public Project Project { get; private set; }
+        private readonly IRepositoryService<Project> _service;
 
         public ProjectForm()
         {
@@ -32,22 +36,21 @@ namespace ProjectRunner.Desktop.Forms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            Project project = new()
+            if (Project == null || Project.Id == 0)
             {
-                Name = TbName.Text.Trim(),
-                Path = TbPath.Text.Trim(),
-                Command = TbCommand.Text.Trim()
-            };
-
-            if (_projectId > 0)
-            {
-                project.Id = _projectId;
+                Project = new Project();
             }
+
+            Project.Name = TbName.Text.Trim();
+            Project.Path = TbPath.Text.Trim();
+            Project.Executable = TbExecutable.Text.Trim();
+            Project.ExecutableArguments = TbExecutableArgs.Text.Trim();
 
             try
             {
-                _service.Save<ProjectValidator>(project);
+                _service.Save<ProjectValidator>(Project);
                 MessageBox.Show("The project was successfully saved.");
+                OnProjectSaved(Project);
                 Close();
             } catch (Exception ex)
             {
@@ -57,11 +60,12 @@ namespace ProjectRunner.Desktop.Forms
 
         private void LoadProject(Project project)
         {
-            _projectId = project.Id;
+            Project = project;
 
-            TbName.Text = project.Name;
-            TbPath.Text = project.Path;
-            TbCommand.Text = project.Command;
+            TbName.Text = Project.Name;
+            TbPath.Text = Project.Path;
+            TbExecutable.Text = Project.Executable;
+            TbExecutableArgs.Text = Project.ExecutableArguments;
         }
     }
 }
