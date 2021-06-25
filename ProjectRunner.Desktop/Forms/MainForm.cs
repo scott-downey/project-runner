@@ -13,8 +13,9 @@ namespace ProjectRunner.Desktop.Forms
         public MainForm()
         {
             InitializeComponent();
-
             LoadProjects();
+            Text = Resources.Strings.AppTitle;
+            BtnAddProject.Text = Resources.Strings.AddProject;
         }
 
         private void BtnAddProject_Click(object sender, EventArgs e)

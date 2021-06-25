@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using ProjectRunner.Entities;
+using System.Globalization;
+using System.Threading;
 
 namespace ProjectRunner.Validators
 {
@@ -7,17 +9,19 @@ namespace ProjectRunner.Validators
     {
         public ProjectValidator()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentCulture;
+
             RuleFor(c => c.Name)
-                .NotEmpty().WithMessage("Name is required.")
-                .NotNull().WithMessage("Name is required.");
+                .NotEmpty().WithName(Resources.Strings.Name).WithMessage(Resources.Strings.NameRequired)
+                .NotNull().WithName(Resources.Strings.Name).WithMessage(Resources.Strings.NameRequired);
 
             RuleFor(c => c.Path)
-                .NotEmpty().WithMessage("Path is required.")
-                .NotNull().WithMessage("Path is required.");
+                .NotEmpty().WithName(Resources.Strings.Path).WithMessage(Resources.Strings.PathRequired)
+                .NotNull().WithName(Resources.Strings.Path).WithMessage(Resources.Strings.PathRequired);
 
             RuleFor(c => c.Executable)
-                .NotEmpty().WithMessage("Executable is required.")
-                .NotNull().WithMessage("Executable is required.");
+                .NotEmpty().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired)
+                .NotNull().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired);
         }
     }
 }

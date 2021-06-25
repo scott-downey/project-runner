@@ -79,7 +79,7 @@ namespace ProjectRunner.Desktop.UserControls
             this.MSManage.Location = new System.Drawing.Point(145, 20);
             this.MSManage.Name = "MSManage";
             this.MSManage.Padding = new System.Windows.Forms.Padding(0);
-            this.MSManage.Size = new System.Drawing.Size(100, 40);
+            this.MSManage.Size = new System.Drawing.Size(110, 40);
             this.MSManage.TabIndex = 1;
             // 
             // MSManageItems
@@ -96,21 +96,21 @@ namespace ProjectRunner.Desktop.UserControls
             // MSManageEditItem
             // 
             this.MSManageEditItem.Name = "MSManageEditItem";
-            this.MSManageEditItem.Size = new System.Drawing.Size(205, 40);
+            this.MSManageEditItem.Size = new System.Drawing.Size(315, 40);
             this.MSManageEditItem.Text = "Edit";
             this.MSManageEditItem.Click += new System.EventHandler(this.MSManageEditItem_Click);
             // 
             // MSManageRemoveItem
             // 
             this.MSManageRemoveItem.Name = "MSManageRemoveItem";
-            this.MSManageRemoveItem.Size = new System.Drawing.Size(205, 40);
+            this.MSManageRemoveItem.Size = new System.Drawing.Size(315, 40);
             this.MSManageRemoveItem.Text = "Remove";
             this.MSManageRemoveItem.Click += new System.EventHandler(this.MSManageRemoveItem_Click);
             // 
             // MSManageShowLog
             // 
             this.MSManageShowLog.Name = "MSManageShowLog";
-            this.MSManageShowLog.Size = new System.Drawing.Size(205, 40);
+            this.MSManageShowLog.Size = new System.Drawing.Size(315, 40);
             this.MSManageShowLog.Text = "Log";
             this.MSManageShowLog.Click += new System.EventHandler(this.MSManageShowLog_Click);
             // 

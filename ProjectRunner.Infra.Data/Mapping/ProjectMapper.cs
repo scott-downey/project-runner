@@ -20,10 +20,15 @@ namespace ProjectRunner.Infra.Data.Mapping
                .IsRequired()
                .HasColumnName("Path")
                .HasColumnType("Varchar(255)");
-            builder.Property(prop => prop.ExecutableArguments)
+            builder.Property(prop => prop.Executable)
                 .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired()
-                .HasColumnName("Command")
+                .HasColumnName("Executable")
+                .HasColumnType("Varchar(255)");
+            builder.Property(prop => prop.ExecutableArguments)
+                .HasConversion(prop => prop.ToString(), prop => prop)
+                .IsRequired(false)
+                .HasColumnName("ExecutableArguments")
                 .HasColumnType("Varchar(255)");
         }
     }

@@ -29,6 +29,11 @@ namespace ProjectRunner.Desktop.UserControls
 
             _logger = new Logger(FLPRunningLog);
             SetProject(project);
+            SetActionButtonText(false);
+            MSManageItems.Text = Resources.Strings.Manage;
+            MSManageEditItem.Text = Resources.Strings.Edit;
+            MSManageRemoveItem.Text = Resources.Strings.Remove;
+            MSManageShowLog.Text = Resources.Strings.Log;
         }
 
         public void SetProject(Project project)
@@ -55,7 +60,7 @@ namespace ProjectRunner.Desktop.UserControls
 
         private void MSManageRemoveItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you remove this project?", "Remove Project", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(Resources.Strings.ProjectRemoveQuestion, Resources.Strings.ProjectRemove, MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -64,7 +69,7 @@ namespace ProjectRunner.Desktop.UserControls
                 try
                 {
                     service.Destroy(_project.Id);
-                    MessageBox.Show("Project was removed.");
+                    MessageBox.Show(Resources.Strings.ProjectRemoveSuccess);
                     RemoveActionEvent(this);
                 }
                 catch (Exception ex)
@@ -108,7 +113,7 @@ namespace ProjectRunner.Desktop.UserControls
 
         private void SetActionButtonText(bool isRunning)
         {
-            BtnAction.Text = isRunning ? "Stop" : "Run";
+            BtnAction.Text = isRunning ? Resources.Strings.Stop : Resources.Strings.Run;
         }
 
     }

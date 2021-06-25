@@ -1,5 +1,7 @@
 using ProjectRunner.Desktop.Forms;
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProjectRunner.Desktop
@@ -16,6 +18,7 @@ namespace ProjectRunner.Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentCulture;
         }
     }
 }

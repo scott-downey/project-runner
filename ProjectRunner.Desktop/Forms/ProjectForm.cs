@@ -16,22 +16,35 @@ namespace ProjectRunner.Desktop.Forms
     {
         public OnProjectSaved OnProjectSaved;
         public Project Project { get; private set; }
-        private readonly IRepositoryService<Project> _service;
+        private IRepositoryService<Project> _service;
 
         public ProjectForm()
         {
             InitializeComponent();
-
-            _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+            Initalization();
         }
 
         public ProjectForm(Project project)
         {
             InitializeComponent();
+            Initalization(project);
+        }
+
+        private void Initalization(Project project = null)
+        {
 
             _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+            Text = Resources.Strings.Project;
+            LblName.Text = Resources.Strings.Name.Trim();
+            LblPath.Text = Resources.Strings.Path.Trim();
+            LblExecutable.Text = Resources.Strings.Executable.Trim();
+            LblExecutableArgs.Text = Resources.Strings.ExecutableArgs.Trim();
+            BtnSave.Text = Resources.Strings.Save.Trim();
 
-            LoadProject(project);
+            if (project != null)
+            {
+                LoadProject(project);
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -49,7 +62,7 @@ namespace ProjectRunner.Desktop.Forms
             try
             {
                 _service.Save<ProjectValidator>(Project);
-                MessageBox.Show("The project was successfully saved.");
+                MessageBox.Show(Resources.Strings.Name);
                 OnProjectSaved(Project);
                 Close();
             } catch (Exception ex)

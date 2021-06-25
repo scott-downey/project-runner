@@ -32,7 +32,7 @@ namespace ProjectRunner.Desktop.Forms
             this.components = new System.ComponentModel.Container();
             this.TblProject = new System.Windows.Forms.TableLayoutPanel();
             this.TbExecutableArgs = new System.Windows.Forms.TextBox();
-            this.LbExecutableArgs = new System.Windows.Forms.Label();
+            this.LblExecutableArgs = new System.Windows.Forms.Label();
             this.TbExecutable = new System.Windows.Forms.TextBox();
             this.LblExecutable = new System.Windows.Forms.Label();
             this.TbPath = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@ namespace ProjectRunner.Desktop.Forms
             this.TblProject.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblProject.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.TblProject.Controls.Add(this.TbExecutableArgs, 0, 3);
-            this.TblProject.Controls.Add(this.LbExecutableArgs, 0, 3);
+            this.TblProject.Controls.Add(this.LblExecutableArgs, 0, 3);
             this.TblProject.Controls.Add(this.TbExecutable, 1, 2);
             this.TblProject.Controls.Add(this.LblExecutable, 0, 2);
             this.TblProject.Controls.Add(this.TbPath, 1, 1);
@@ -84,17 +84,17 @@ namespace ProjectRunner.Desktop.Forms
             this.TbExecutableArgs.Size = new System.Drawing.Size(531, 35);
             this.TbExecutableArgs.TabIndex = 8;
             // 
-            // LbExecutableArgs
+            // LblExecutableArgs
             // 
-            this.LbExecutableArgs.AutoSize = true;
-            this.LbExecutableArgs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LbExecutableArgs.Location = new System.Drawing.Point(0, 150);
-            this.LbExecutableArgs.Margin = new System.Windows.Forms.Padding(0);
-            this.LbExecutableArgs.Name = "LbExecutableArgs";
-            this.LbExecutableArgs.Size = new System.Drawing.Size(135, 70);
-            this.LbExecutableArgs.TabIndex = 7;
-            this.LbExecutableArgs.Text = "Executable Args";
-            this.LbExecutableArgs.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LblExecutableArgs.AutoSize = true;
+            this.LblExecutableArgs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblExecutableArgs.Location = new System.Drawing.Point(0, 150);
+            this.LblExecutableArgs.Margin = new System.Windows.Forms.Padding(0);
+            this.LblExecutableArgs.Name = "LblExecutableArgs";
+            this.LblExecutableArgs.Size = new System.Drawing.Size(135, 70);
+            this.LblExecutableArgs.TabIndex = 7;
+            this.LblExecutableArgs.Text = "Executable Args";
+            this.LblExecutableArgs.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // TbExecutable
             // 
@@ -214,6 +214,6 @@ namespace ProjectRunner.Desktop.Forms
         private System.Windows.Forms.Panel PnlControls;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.TextBox TbExecutableArgs;
-        private System.Windows.Forms.Label LbExecutableArgs;
+        private System.Windows.Forms.Label LblExecutableArgs;
     }
 }
