@@ -1,9 +1,9 @@
-﻿using ProjectRunner.Dto;
+﻿using ProjectRunner.Common.Dto;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace ProjectRunner.Services
+namespace ProjectRunner.Common.Services
 {
     public class ProjectRunnerService
     {

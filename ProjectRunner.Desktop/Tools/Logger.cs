@@ -1,4 +1,4 @@
-﻿using ProjectRunner.Interfaces;
+﻿using ProjectRunner.Common.Interfaces;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;

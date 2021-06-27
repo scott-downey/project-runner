@@ -40,7 +40,7 @@ namespace ProjectRunner.Desktop.Forms
             // BtnAddProject
             // 
             this.BtnAddProject.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnAddProject.Location = new System.Drawing.Point(636, 10);
+            this.BtnAddProject.Location = new System.Drawing.Point(626, 10);
             this.BtnAddProject.Margin = new System.Windows.Forms.Padding(0);
             this.BtnAddProject.Name = "BtnAddProject";
             this.BtnAddProject.Size = new System.Drawing.Size(130, 40);
@@ -53,11 +53,11 @@ namespace ProjectRunner.Desktop.Forms
             // 
             this.PnlTopControls.Controls.Add(this.BtnAddProject);
             this.PnlTopControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlTopControls.Location = new System.Drawing.Point(0, 0);
+            this.PnlTopControls.Location = new System.Drawing.Point(10, 0);
             this.PnlTopControls.Margin = new System.Windows.Forms.Padding(0);
             this.PnlTopControls.Name = "PnlTopControls";
             this.PnlTopControls.Padding = new System.Windows.Forms.Padding(10);
-            this.PnlTopControls.Size = new System.Drawing.Size(776, 60);
+            this.PnlTopControls.Size = new System.Drawing.Size(756, 60);
             this.PnlTopControls.TabIndex = 1;
             // 
             // FlPProjects
@@ -75,26 +75,28 @@ namespace ProjectRunner.Desktop.Forms
             // PnlProjects
             // 
             this.PnlProjects.AutoScroll = true;
+            this.PnlProjects.BackColor = System.Drawing.SystemColors.Control;
             this.PnlProjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlProjects.Controls.Add(this.FlPProjects);
             this.PnlProjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlProjects.Location = new System.Drawing.Point(0, 60);
+            this.PnlProjects.Location = new System.Drawing.Point(10, 60);
             this.PnlProjects.Margin = new System.Windows.Forms.Padding(0);
             this.PnlProjects.Name = "PnlProjects";
-            this.PnlProjects.Size = new System.Drawing.Size(776, 426);
+            this.PnlProjects.Size = new System.Drawing.Size(756, 456);
             this.PnlProjects.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(776, 536);
             this.Controls.Add(this.PnlProjects);
             this.Controls.Add(this.PnlTopControls);
             this.MaximumSize = new System.Drawing.Size(800, 1200);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 20);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.PnlTopControls.ResumeLayout(false);

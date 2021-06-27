@@ -1,8 +1,8 @@
-﻿using ProjectRunner.Entities;
-using ProjectRunner.Interfaces;
+﻿using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Interfaces;
 using System.Diagnostics;
 
-namespace ProjectRunner.Dto
+namespace ProjectRunner.Common.Dto
 {
     public class ProjectRunnerDto
     {

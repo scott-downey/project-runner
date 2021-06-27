@@ -1,12 +1,12 @@
-﻿using ProjectRunner.Common;
+﻿using ProjectRunner.Common.Dto;
+using ProjectRunner.Common.Tools;
+using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Interfaces;
+using ProjectRunner.Common.Services;
 using ProjectRunner.Desktop.Forms;
 using ProjectRunner.Desktop.Tools;
-using ProjectRunner.Dto;
-using ProjectRunner.Entities;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
-using ProjectRunner.Interfaces;
-using ProjectRunner.Services;
 using System;
 using System.Windows.Forms;
 

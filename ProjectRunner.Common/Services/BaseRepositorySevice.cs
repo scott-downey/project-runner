@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using ProjectRunner.Entities;
-using ProjectRunner.Interfaces;
+using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace ProjectRunner.Services
+namespace ProjectRunner.Common.Services
 {
     public class BaseService<Entity> : IRepositoryService<Entity> where Entity : BaseEntity
     {

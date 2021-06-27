@@ -17,9 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectRunner.Common\ProjectRunner.Common.csproj" />
     <ProjectReference Include="..\ProjectRunner.Infra.Data\ProjectRunner.Infra.Data.csproj" />
-    <ProjectReference Include="..\ProjectRunner\ProjectRunner.csproj" />
+    <ProjectReference Include="..\ProjectRunner.Common\ProjectRunner.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

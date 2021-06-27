@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjectRunner.Entities;
+using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Tools;
 using ProjectRunner.Infra.Data.Mapping;
+using System.IO;
 using System.Reflection;
 
 namespace ProjectRunner.Infra.Data.Context
@@ -11,17 +13,20 @@ namespace ProjectRunner.Infra.Data.Context
 
         public SQLiteContext() : base()
         {
-            Database.EnsureCreated();
+            InitializeDatabase();
         }
 
         public SQLiteContext(DbContextOptions<SQLiteContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            InitializeDatabase();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=ProjectRunner.db", options => {
+            string databasePath = Path.Combine(Utils.DatabaseInfo.Path, Utils.DatabaseInfo.Filename);
+            string databaseSource = string.Format("Data Source={0}", databasePath);
+
+            optionsBuilder.UseSqlite(databaseSource, options => {
                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
             });
             base.OnConfiguring(optionsBuilder);
@@ -31,6 +36,12 @@ namespace ProjectRunner.Infra.Data.Context
         {
             modelBuilder.Entity<Project>(new ProjectMapper().Configure);
             base.OnModelCreating(modelBuilder);
+        }
+
+        private void InitializeDatabase()
+        {
+            Directory.CreateDirectory(Utils.DatabaseInfo.Path);
+            Database.EnsureCreated();
         }
     }
 }

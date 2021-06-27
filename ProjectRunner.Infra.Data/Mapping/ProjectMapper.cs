@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ProjectRunner.Entities;
+using ProjectRunner.Common.Entities;
 
 namespace ProjectRunner.Infra.Data.Mapping
 {

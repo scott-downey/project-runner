@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace ProjectRunner.Interfaces
+namespace ProjectRunner.Common.Interfaces
 {
     public interface ILogger
     {

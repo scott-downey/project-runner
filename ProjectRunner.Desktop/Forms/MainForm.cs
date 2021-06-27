@@ -1,8 +1,8 @@
 ﻿using ProjectRunner.Desktop.UserControls;
-using ProjectRunner.Entities;
+using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Services;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
-using ProjectRunner.Services;
 using System;
 using System.Windows.Forms;
 

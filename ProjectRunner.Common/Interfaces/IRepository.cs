@@ -1,7 +1,7 @@
-﻿using ProjectRunner.Entities;
+﻿using ProjectRunner.Common.Entities;
 using System.Collections.Generic;
 
-namespace ProjectRunner.Interfaces
+namespace ProjectRunner.Common.Interfaces
 {
     public interface IRepository<Entity> where Entity : BaseEntity
     {

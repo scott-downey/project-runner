@@ -5,11 +5,9 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner.Desktop", "ProjectRunner.Desktop\ProjectRunner.Desktop.csproj", "{B6929241-BA8E-4719-A86F-52B5BF66D108}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner", "ProjectRunner\ProjectRunner.csproj", "{D02854E2-2A3D-41D6-9193-AFC27DBE147C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner.Common", "ProjectRunner.Common\ProjectRunner.Common.csproj", "{D02854E2-2A3D-41D6-9193-AFC27DBE147C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner.Infra.Data", "ProjectRunner.Infra.Data\ProjectRunner.Infra.Data.csproj", "{79B4C60A-9CFC-408E-B993-870DB631AF4B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRunner.Common", "ProjectRunner.Common\ProjectRunner.Common.csproj", "{468122CC-6E41-4EE6-8D3B-E43D28E449AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{468122CC-6E41-4EE6-8D3B-E43D28E449AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{468122CC-6E41-4EE6-8D3B-E43D28E449AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{468122CC-6E41-4EE6-8D3B-E43D28E449AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{468122CC-6E41-4EE6-8D3B-E43D28E449AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

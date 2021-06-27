@@ -1,6 +1,6 @@
-﻿using ProjectRunner.Entities;
+﻿using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Interfaces;
 using ProjectRunner.Infra.Data.Context;
-using ProjectRunner.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 

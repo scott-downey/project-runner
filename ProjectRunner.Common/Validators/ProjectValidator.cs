@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using ProjectRunner.Entities;
+using ProjectRunner.Common.Entities;
 using System.Globalization;
 using System.Threading;
 
-namespace ProjectRunner.Validators
+namespace ProjectRunner.Common.Validators
 {
     public class ProjectValidator : AbstractValidator<Project>
     {

@@ -1,10 +1,10 @@
-﻿using ProjectRunner.Common;
-using ProjectRunner.Entities;
+﻿using ProjectRunner.Common.Entities;
+using ProjectRunner.Common.Interfaces;
+using ProjectRunner.Common.Services;
+using ProjectRunner.Common.Tools;
+using ProjectRunner.Common.Validators;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
-using ProjectRunner.Interfaces;
-using ProjectRunner.Services;
-using ProjectRunner.Validators;
 using System;
 using System.Windows.Forms;
 
@@ -62,7 +62,7 @@ namespace ProjectRunner.Desktop.Forms
             try
             {
                 _service.Save<ProjectValidator>(Project);
-                MessageBox.Show(Resources.Strings.Name);
+                MessageBox.Show(Resources.Strings.Save);
                 OnProjectSaved(Project);
                 Close();
             } catch (Exception ex)

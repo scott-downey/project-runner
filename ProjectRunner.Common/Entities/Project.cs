@@ -1,4 +1,4 @@
-﻿namespace ProjectRunner.Entities
+﻿namespace ProjectRunner.Common.Entities
 {
     public class Project : BaseEntity
     {

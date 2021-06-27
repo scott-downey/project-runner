@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using ProjectRunner.Entities;
+using ProjectRunner.Common.Entities;
 using System.Collections.Generic;
 
-namespace ProjectRunner.Interfaces
+namespace ProjectRunner.Common.Interfaces
 {
     public interface IRepositoryService<Entity> where Entity : BaseEntity
     {
