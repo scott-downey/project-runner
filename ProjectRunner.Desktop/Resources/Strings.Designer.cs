@@ -79,6 +79,15 @@ namespace ProjectRunner.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close to stray.
+        /// </summary>
+        internal static string CloseToStray {
+            get {
+                return ResourceManager.GetString("CloseToStray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         internal static string Edit {
@@ -106,6 +115,15 @@ namespace ProjectRunner.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log.
         /// </summary>
         internal static string Log {
@@ -120,6 +138,15 @@ namespace ProjectRunner.Desktop.Resources {
         internal static string Manage {
             get {
                 return ResourceManager.GetString("Manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimize to stray.
+        /// </summary>
+        internal static string MinimizeToStray {
+            get {
+                return ResourceManager.GetString("MinimizeToStray", resourceCulture);
             }
         }
         
@@ -210,6 +237,15 @@ namespace ProjectRunner.Desktop.Resources {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         

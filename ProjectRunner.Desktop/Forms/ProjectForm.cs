@@ -62,7 +62,7 @@ namespace ProjectRunner.Desktop.Forms
             try
             {
                 _service.Save<ProjectValidator>(Project);
-                MessageBox.Show(Resources.Strings.Save);
+                MessageBox.Show(Resources.Strings.ProjectSaveSuccess);
                 OnProjectSaved(Project);
                 Close();
             } catch (Exception ex)

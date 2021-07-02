@@ -15,15 +15,87 @@ namespace ProjectRunner.Desktop.Forms
             InitializeComponent();
             LoadProjects();
             Text = Resources.Strings.AppTitle;
-            BtnAddProject.Text = Resources.Strings.AddProject;
+            MMSProject.Text = Resources.Strings.Project;
+            MMSProjectAdd.Text = Resources.Strings.AddProject;
+            MMSSettings.Text = Resources.Strings.Settings;
+            Resize += MainForm_Resize;
+            MaximizeBox = false;
+
+            ConfigureNotifyIcon();
         }
 
-        private void BtnAddProject_Click(object sender, EventArgs e)
+        #region Form Events
+        private void MainForm_Resize(object sender, EventArgs e)
         {
-            ProjectForm projectForm = new() { StartPosition = FormStartPosition.CenterParent };
-            projectForm.OnProjectSaved = AddProject;
-            projectForm.ShowDialog();
+            if (Properties.Settings.Default.MinimizeToStray)
+            {
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                    NotifyIcon.Visible = true;
+                }
+                else
+                {
+                    NotifyIcon.Visible = false;
+                }
+            }
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (Properties.Settings.Default.CloseToStray)
+            {
+                if (e.CloseReason == CloseReason.WindowsShutDown
+                    || e.CloseReason == CloseReason.ApplicationExitCall
+                    || e.CloseReason == CloseReason.TaskManagerClosing)
+                {
+                    return;
+                }
+
+                e.Cancel = true;
+
+                Hide();
+                NotifyIcon.Visible = true;
+            }
+        }
+        #endregion
+
+        private void MMSSettings_Click(object sender, EventArgs e)
+        {
+            SettingsForm configForm = new() { StartPosition = FormStartPosition.CenterParent };
+            configForm.ShowDialog();
+        }
+
+        #region Notify Icon Events and Handlers
+        private void NotifyIcon_DoubleClick(object Sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void NotifyIconClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ConfigureNotifyIcon()
+        {
+            ToolStripMenuItem toolStripMenuItem = new()
+            {
+                Text = Resources.Strings.Exit
+            };
+            toolStripMenuItem.Click += NotifyIconClose_Click;
+
+            ContextMenuStrip contextMenuStrip = new();
+            contextMenuStrip.Items.Add(toolStripMenuItem);
+
+            NotifyIcon.ContextMenuStrip = contextMenuStrip;
+            NotifyIcon.DoubleClick += NotifyIcon_DoubleClick;
+
+        }
+        #endregion
+
+        #region Project Events and Hanlders
         private void LoadProjects()
         {
             var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
@@ -54,6 +126,13 @@ namespace ProjectRunner.Desktop.Forms
             FlPProjects.Controls.Add(ucProject);
         }
 
+        private void MMSProjectAdd_Click(object sender, EventArgs e)
+        {
+            ProjectForm projectForm = new() { StartPosition = FormStartPosition.CenterParent };
+            projectForm.OnProjectSaved = AddProject;
+            projectForm.ShowDialog();
+        }
+
 
         private void EditProjectEvent(UCProject sender, Project project)
         {
@@ -64,6 +143,7 @@ namespace ProjectRunner.Desktop.Forms
         {
             FlPProjects.Controls.Remove(sender);
         }
+        #endregion
     }
 }
  

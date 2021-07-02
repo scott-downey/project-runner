@@ -30,6 +30,7 @@ namespace ProjectRunner.Desktop.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.TblProject = new System.Windows.Forms.TableLayoutPanel();
             this.TbExecutableArgs = new System.Windows.Forms.TextBox();
             this.LblExecutableArgs = new System.Windows.Forms.Label();
@@ -191,6 +192,7 @@ namespace ProjectRunner.Desktop.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 286);
             this.Controls.Add(this.TblProject);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProjectForm";
             this.Text = "Project";
             this.TblProject.ResumeLayout(false);
