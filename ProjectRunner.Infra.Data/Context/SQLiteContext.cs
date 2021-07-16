@@ -34,6 +34,7 @@ namespace ProjectRunner.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Executable>(new ExecutableMapper().Configure);
             modelBuilder.Entity<Project>(new ProjectMapper().Configure);
             base.OnModelCreating(modelBuilder);
         }

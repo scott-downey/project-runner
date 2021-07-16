@@ -73,7 +73,7 @@ namespace ProjectRunner.Desktop.Forms
             this.TblProject.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.TblProject.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TblProject.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TblProject.Size = new System.Drawing.Size(676, 286);
+            this.TblProject.Size = new System.Drawing.Size(676, 283);
             this.TblProject.TabIndex = 0;
             // 
             // TbExecutableArgs
@@ -173,7 +173,7 @@ namespace ProjectRunner.Desktop.Forms
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(535, 20);
+            this.BtnSave.Location = new System.Drawing.Point(535, 10);
             this.BtnSave.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(130, 40);
@@ -190,11 +190,11 @@ namespace ProjectRunner.Desktop.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 286);
+            this.ClientSize = new System.Drawing.Size(676, 283);
             this.Controls.Add(this.TblProject);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProjectForm";
-            this.Text = "Project";
+            this.Text = "Insert Project";
             this.TblProject.ResumeLayout(false);
             this.TblProject.PerformLayout();
             this.PnlControls.ResumeLayout(false);

@@ -32,14 +32,14 @@ namespace ProjectRunner.Desktop.Forms
 
         private void Initalization(Project project = null)
         {
-
-            _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
-            Text = Resources.Strings.Project;
+            Text = Resources.Strings.Insert + " " +  Resources.Strings.Project;
             LblName.Text = Resources.Strings.Name.Trim();
             LblPath.Text = Resources.Strings.Path.Trim();
             LblExecutable.Text = Resources.Strings.Executable.Trim();
             LblExecutableArgs.Text = Resources.Strings.ExecutableArgs.Trim();
             BtnSave.Text = Resources.Strings.Save.Trim();
+
+            _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
 
             if (project != null)
             {
@@ -56,7 +56,7 @@ namespace ProjectRunner.Desktop.Forms
 
             Project.Name = TbName.Text.Trim();
             Project.Path = TbPath.Text.Trim();
-            Project.Executable = TbExecutable.Text.Trim();
+            //Project.Executable = TbExecutable.Text.Trim();
             Project.ExecutableArguments = TbExecutableArgs.Text.Trim();
 
             try
@@ -77,7 +77,7 @@ namespace ProjectRunner.Desktop.Forms
 
             TbName.Text = Project.Name;
             TbPath.Text = Project.Path;
-            TbExecutable.Text = Project.Executable;
+            //TbExecutable.Text = Project.Executable;
             TbExecutableArgs.Text = Project.ExecutableArguments;
         }
     }

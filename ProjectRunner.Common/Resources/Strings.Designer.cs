@@ -79,6 +79,24 @@ namespace ProjectRunner.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filename.
+        /// </summary>
+        internal static string Filename {
+            get {
+                return ResourceManager.GetString("Filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filename required.
+        /// </summary>
+        internal static string FilenameRequired {
+            get {
+                return ResourceManager.GetString("FilenameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Name {
@@ -93,24 +111,6 @@ namespace ProjectRunner.Common.Resources {
         internal static string NameRequired {
             get {
                 return ResourceManager.GetString("NameRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path.
-        /// </summary>
-        internal static string Path {
-            get {
-                return ResourceManager.GetString("Path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path is required.
-        /// </summary>
-        internal static string PathRequired {
-            get {
-                return ResourceManager.GetString("PathRequired", resourceCulture);
             }
         }
     }

@@ -5,9 +5,9 @@ using System.Threading;
 
 namespace ProjectRunner.Common.Validators
 {
-    public class ProjectValidator : AbstractValidator<Project>
+    public class ExecutableValidator : AbstractValidator<Executable>
     {
-        public ProjectValidator()
+        public ExecutableValidator()
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentCulture;
 
@@ -15,13 +15,9 @@ namespace ProjectRunner.Common.Validators
                 .NotEmpty().WithName(Resources.Strings.Name).WithMessage(Resources.Strings.NameRequired)
                 .NotNull().WithName(Resources.Strings.Name).WithMessage(Resources.Strings.NameRequired);
 
-            RuleFor(c => c.Path)
+            RuleFor(c => c.FileName)
                 .NotEmpty().WithName(Resources.Strings.Filename).WithMessage(Resources.Strings.FilenameRequired)
                 .NotNull().WithName(Resources.Strings.Filename).WithMessage(Resources.Strings.FilenameRequired);
-
-            RuleFor(c => c.ExecutableId)
-                .NotEmpty().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired)
-                .NotNull().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired);
         }
     }
 }

@@ -20,11 +20,11 @@ namespace ProjectRunner.Infra.Data.Mapping
                .IsRequired()
                .HasColumnName("Path")
                .HasColumnType("Varchar(255)");
-            builder.Property(prop => prop.Executable)
-                .HasConversion(prop => prop.ToString(), prop => prop)
+            builder.Property(prop => prop.ExecutableId)
+                .HasConversion(prop => prop, prop => prop)
                 .IsRequired()
-                .HasColumnName("Executable")
-                .HasColumnType("Varchar(255)");
+                .HasColumnName("ExecutableId")
+                .HasColumnType("Int(10)");
             builder.Property(prop => prop.ExecutableArguments)
                 .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired(false)

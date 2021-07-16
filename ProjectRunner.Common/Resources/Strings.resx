@@ -123,16 +123,16 @@
   <data name="ExecutableRequired" xml:space="preserve">
     <value>Executable is required</value>
   </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="FilenameRequired" xml:space="preserve">
+    <value>Filename required</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="NameRequired" xml:space="preserve">
     <value>Name is required</value>
-  </data>
-  <data name="Path" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="PathRequired" xml:space="preserve">
-    <value>Path is required</value>
   </data>
 </root>

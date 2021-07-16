@@ -14,7 +14,7 @@ namespace ProjectRunner.Common.Services
             Process process = new();
             process.StartInfo = new ProcessStartInfo
             {
-                FileName = dto.Project.Executable,
+                FileName = dto.Project.Executable.FileName,
                 Arguments = dto.Project.ExecutableArguments,
                 WorkingDirectory = dto.Project.Path,
                 UseShellExecute = false,
@@ -36,7 +36,7 @@ namespace ProjectRunner.Common.Services
         {
             if (dto.Project != null)
             {
-                _runners[index].Proccess.StartInfo.FileName = dto.Project.Executable;
+                _runners[index].Proccess.StartInfo.FileName = dto.Project.Executable.FileName;
                 _runners[index].Proccess.StartInfo.Arguments = dto.Project.ExecutableArguments;
                 _runners[index].Proccess.StartInfo.WorkingDirectory = dto.Project.Path;
             }

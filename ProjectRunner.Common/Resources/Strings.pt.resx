@@ -123,16 +123,16 @@
   <data name="ExecutableRequired" xml:space="preserve">
     <value>Executável é obrigatório</value>
   </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Caminho</value>
+  </data>
+  <data name="FilenameRequired" xml:space="preserve">
+    <value>Caminho é obrigatório</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Nome</value>
   </data>
   <data name="NameRequired" xml:space="preserve">
     <value>Nome é obrigatório</value>
-  </data>
-  <data name="Path" xml:space="preserve">
-    <value>Caminho</value>
-  </data>
-  <data name="PathRequired" xml:space="preserve">
-    <value>Caminho é obrigatório</value>
   </data>
 </root>

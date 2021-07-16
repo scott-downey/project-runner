@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddProject" xml:space="preserve">
-    <value>Add Project</value>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
     <value>Project Runner</value>
@@ -135,8 +135,29 @@
   <data name="ExecutableArgs" xml:space="preserve">
     <value>Executable Args.</value>
   </data>
+  <data name="ExecutableRemove" xml:space="preserve">
+    <value>Remove Executable</value>
+  </data>
+  <data name="ExecutableRemoveQuestion" xml:space="preserve">
+    <value>Do you remove this executable?</value>
+  </data>
+  <data name="ExecutableRemoveSuccess" xml:space="preserve">
+    <value>Executable was removed.</value>
+  </data>
+  <data name="Executables" xml:space="preserve">
+    <value>Executables</value>
+  </data>
+  <data name="ExecutableSaveSuccess" xml:space="preserve">
+    <value>Executable was saved.</value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>Insert</value>
   </data>
   <data name="Log" xml:space="preserve">
     <value>Log</value>
@@ -149,6 +170,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="Path" xml:space="preserve">
     <value>Path</value>
@@ -164,6 +188,9 @@
   </data>
   <data name="ProjectRemoveSuccess" xml:space="preserve">
     <value>Project was removed.</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
   </data>
   <data name="ProjectSaveSuccess" xml:space="preserve">
     <value>Project was saved.</value>
@@ -182,5 +209,11 @@
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

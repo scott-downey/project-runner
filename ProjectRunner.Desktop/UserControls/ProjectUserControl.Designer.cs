@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectRunner.Desktop.UserControls
 {
-    partial class UCProject
+    partial class ProjectUserControl
     {
         /// <summary> 
         /// Required designer variable.

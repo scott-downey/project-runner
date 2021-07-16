@@ -61,11 +61,11 @@ namespace ProjectRunner.Desktop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Project.
+        ///   Looks up a localized string similar to Add.
         /// </summary>
-        internal static string AddProject {
+        internal static string Add {
             get {
-                return ResourceManager.GetString("AddProject", resourceCulture);
+                return ResourceManager.GetString("Add", resourceCulture);
             }
         }
         
@@ -115,11 +115,74 @@ namespace ProjectRunner.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove Executable.
+        /// </summary>
+        internal static string ExecutableRemove {
+            get {
+                return ResourceManager.GetString("ExecutableRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you remove this executable?.
+        /// </summary>
+        internal static string ExecutableRemoveQuestion {
+            get {
+                return ResourceManager.GetString("ExecutableRemoveQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Executable was removed..
+        /// </summary>
+        internal static string ExecutableRemoveSuccess {
+            get {
+                return ResourceManager.GetString("ExecutableRemoveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Executables.
+        /// </summary>
+        internal static string Executables {
+            get {
+                return ResourceManager.GetString("Executables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Executable was saved..
+        /// </summary>
+        internal static string ExecutableSaveSuccess {
+            get {
+                return ResourceManager.GetString("ExecutableSaveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         internal static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filename.
+        /// </summary>
+        internal static string FileName {
+            get {
+                return ResourceManager.GetString("FileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert.
+        /// </summary>
+        internal static string Insert {
+            get {
+                return ResourceManager.GetString("Insert", resourceCulture);
             }
         }
         
@@ -156,6 +219,15 @@ namespace ProjectRunner.Desktop.Resources {
         internal static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -201,6 +273,15 @@ namespace ProjectRunner.Desktop.Resources {
         internal static string ProjectRemoveSuccess {
             get {
                 return ResourceManager.GetString("ProjectRemoveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        internal static string Projects {
+            get {
+                return ResourceManager.GetString("Projects", resourceCulture);
             }
         }
         
@@ -255,6 +336,24 @@ namespace ProjectRunner.Desktop.Resources {
         internal static string Stop {
             get {
                 return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

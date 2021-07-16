@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ProjectRunner.Desktop.UserControls
 {
-    public delegate void EditActionEvent(UCProject sender, Project project);
-    public delegate void RemoveActionEvent(UCProject sender);
+    public delegate void EditActionEvent(ProjectUserControl sender, Project project);
+    public delegate void RemoveActionEvent(ProjectUserControl sender);
 
-    public partial class UCProject : UserControl
+    public partial class ProjectUserControl : UserControl
     {
         public EditActionEvent EditActionEvent;
         public RemoveActionEvent RemoveActionEvent;
@@ -23,7 +23,7 @@ namespace ProjectRunner.Desktop.UserControls
         private Project _project;
         private int _proccesIndex;
 
-        public UCProject(Project project)
+        public ProjectUserControl(Project project)
         {
             InitializeComponent();
 
@@ -64,7 +64,7 @@ namespace ProjectRunner.Desktop.UserControls
 
             if (dialogResult == DialogResult.Yes)
             {
-                BaseService<Project> service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+                BaseService<Project> service = new(new BaseRepository<Project>(new SQLiteContext()));
 
                 try
                 {

@@ -13,13 +13,26 @@ namespace ProjectRunner.Desktop.Forms
         public MainForm()
         {
             InitializeComponent();
-            LoadProjects();
+
             Text = Resources.Strings.AppTitle;
-            MMSProject.Text = Resources.Strings.Project;
-            MMSProjectAdd.Text = Resources.Strings.AddProject;
-            MMSSettings.Text = Resources.Strings.Settings;
             Resize += MainForm_Resize;
             MaximizeBox = false;
+            TpProjects.Text = Resources.Strings.Projects;
+            TpExecutables.Text = Resources.Strings.Executables;
+            BtnAddProject.Text = Resources.Strings.Add;
+            TpSettings.Text = Resources.Strings.Settings;
+            BtnAddExecutable.Text = Resources.Strings.Add;
+            LblSettingsMinimize.Text = Resources.Strings.MinimizeToStray;
+            LblSettingsClose.Text = Resources.Strings.CloseToStray;
+            RbSettingsMinimizeYes.Text = Resources.Strings.Yes;
+            RbSettingsMinimizeNo.Text = Resources.Strings.No;
+            RbSettingsCloseYes.Text = Resources.Strings.Yes;
+            RbSettingsCloseNo.Text = Resources.Strings.No;
+            BtnSaveSettings.Text = Resources.Strings.Save;
+
+            LoadProjects();
+            LoadExecutables();
+            LoadSettings();
 
             ConfigureNotifyIcon();
         }
@@ -60,12 +73,6 @@ namespace ProjectRunner.Desktop.Forms
         }
         #endregion
 
-        private void MMSSettings_Click(object sender, EventArgs e)
-        {
-            SettingsForm configForm = new() { StartPosition = FormStartPosition.CenterParent };
-            configForm.ShowDialog();
-        }
-
         #region Notify Icon Events and Handlers
         private void NotifyIcon_DoubleClick(object Sender, EventArgs e)
         {
@@ -101,7 +108,7 @@ namespace ProjectRunner.Desktop.Forms
             var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
             var projects = service.All();
 
-            FlPProjects.Controls.Clear();
+            FlpProjects.Controls.Clear();
 
             foreach (var project in projects)
             {
@@ -111,8 +118,7 @@ namespace ProjectRunner.Desktop.Forms
 
         private void AddProject(Project project)
         {
-
-            UCProject ucProject = new(project) { EditActionEvent = EditProjectEvent, RemoveActionEvent = RemoveProjectEvent };
+            ProjectUserControl ucProject = new(project) { EditActionEvent = EditProjectEvent, RemoveActionEvent = RemoveProjectEvent };
             ucProject.MinimumSize = new(PnlProjects.Width - 70, ucProject.MinimumSize.Height);
             ucProject.BorderStyle = BorderStyle.FixedSingle;
             ucProject.Margin = new() { Left = 35, Top = 16 };
@@ -123,25 +129,82 @@ namespace ProjectRunner.Desktop.Forms
                 children[0].MinimumSize = new(ucProject.MinimumSize.Width, children[0].MinimumSize.Height);
             }
 
-            FlPProjects.Controls.Add(ucProject);
+            FlpProjects.Controls.Add(ucProject);
         }
 
-        private void MMSProjectAdd_Click(object sender, EventArgs e)
+        private void BtnAddProject_Click(object sender, EventArgs e)
         {
             ProjectForm projectForm = new() { StartPosition = FormStartPosition.CenterParent };
             projectForm.OnProjectSaved = AddProject;
             projectForm.ShowDialog();
         }
 
-
-        private void EditProjectEvent(UCProject sender, Project project)
+        private static void EditProjectEvent(ProjectUserControl sender, Project project)
         {
             sender.SetProject(project);
         }
 
-        private void RemoveProjectEvent(UCProject sender)
+        private void RemoveProjectEvent(ProjectUserControl sender)
         {
-            FlPProjects.Controls.Remove(sender);
+            FlpProjects.Controls.Remove(sender);
+        }
+        #endregion
+
+        #region Executable Events And Handlers
+        private void BtnAddExecutable_Click(object sender, EventArgs e)
+        {
+            ExecutableForm executableForm = new() { StartPosition = FormStartPosition.CenterParent };
+            executableForm.OnExecutableSaved = AddExecutable;
+            executableForm.ShowDialog();
+        }
+
+        private void AddExecutable(Executable executable)
+        {
+            ExecutableUserControl executableUserControl = new(executable) { EditActionEvent = EditExecutabletEvent, RemoveActionEvent = RemoveExecutableEvent };
+            executableUserControl.MinimumSize = new(PnlExecutables.Width - 45, executableUserControl.MinimumSize.Height);
+            executableUserControl.BorderStyle = BorderStyle.FixedSingle;
+            executableUserControl.Margin = new() { Top = 16 };
+            FlpExecutables.Controls.Add(executableUserControl);
+        }
+
+        private void LoadExecutables()
+        {
+            var service = new BaseService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
+            var executables = service.All();
+
+            FlpExecutables.Controls.Clear();
+
+            foreach (var executable in executables) {
+                AddExecutable(executable);
+            }
+        }
+
+        private static void EditExecutabletEvent(ExecutableUserControl sender, Executable executable)
+        {
+            sender.SetExecutable(executable);
+        }
+
+        private void RemoveExecutableEvent(ExecutableUserControl sender)
+        {
+            FlpExecutables.Controls.Remove(sender);
+        }
+        #endregion
+
+        #region Settings Events and Handlers
+        private void BtnSaveSettings_Click(object sender, EventArgs e)
+        {
+
+            Properties.Settings.Default.MinimizeToStray = RbSettingsMinimizeYes.Checked;
+            Properties.Settings.Default.CloseToStray = RbSettingsCloseYes.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void LoadSettings()
+        {
+            RbSettingsMinimizeYes.Checked = Properties.Settings.Default.MinimizeToStray == true;
+            RbSettingsMinimizeNo.Checked = Properties.Settings.Default.MinimizeToStray == false;
+            RbSettingsCloseYes.Checked = Properties.Settings.Default.CloseToStray == true;
+            RbSettingsCloseNo.Checked = Properties.Settings.Default.CloseToStray == false;
         }
         #endregion
     }
