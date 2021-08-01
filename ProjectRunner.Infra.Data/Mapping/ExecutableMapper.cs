@@ -8,7 +8,7 @@ namespace ProjectRunner.Infra.Data.Mapping
     {
         public void Configure(EntityTypeBuilder<Executable> builder)
         {
-            builder.ToTable("Executable");
+            builder.ToTable("Executables");
             builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Name)
                 .HasConversion(prop => prop.ToString(), prop => prop)
@@ -20,6 +20,10 @@ namespace ProjectRunner.Infra.Data.Mapping
                .IsRequired()
                .HasColumnName("FileName")
                .HasColumnType("Varchar(255)");
+            builder.HasMany(e => e.Projects)
+                .WithOne(p => p.Executable)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Navigation(e => e.Projects);
         }
     }
 }

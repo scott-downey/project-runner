@@ -30,6 +30,12 @@ namespace ProjectRunner.Infra.Data.Mapping
                 .IsRequired(false)
                 .HasColumnName("ExecutableArguments")
                 .HasColumnType("Varchar(255)");
+            builder.HasOne(p => p.Executable)
+                .WithMany(e => e.Projects)
+                .IsRequired()
+                .HasForeignKey(p => p.ExecutableId)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Navigation(p => p.Executable);
         }
     }
 }

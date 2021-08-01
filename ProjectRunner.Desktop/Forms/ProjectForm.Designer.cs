@@ -32,18 +32,22 @@ namespace ProjectRunner.Desktop.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.TblProject = new System.Windows.Forms.TableLayoutPanel();
+            this.PnlPath = new System.Windows.Forms.Panel();
+            this.BtnFileBrowseDialog = new System.Windows.Forms.Button();
+            this.TbPath = new System.Windows.Forms.TextBox();
             this.TbExecutableArgs = new System.Windows.Forms.TextBox();
             this.LblExecutableArgs = new System.Windows.Forms.Label();
-            this.TbExecutable = new System.Windows.Forms.TextBox();
             this.LblExecutable = new System.Windows.Forms.Label();
-            this.TbPath = new System.Windows.Forms.TextBox();
             this.LblPath = new System.Windows.Forms.Label();
             this.LblName = new System.Windows.Forms.Label();
             this.TbName = new System.Windows.Forms.TextBox();
             this.PnlControls = new System.Windows.Forms.Panel();
             this.BtnSave = new System.Windows.Forms.Button();
+            this.CbExecutable = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FBDPath = new System.Windows.Forms.FolderBrowserDialog();
             this.TblProject.SuspendLayout();
+            this.PnlPath.SuspendLayout();
             this.PnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -53,15 +57,15 @@ namespace ProjectRunner.Desktop.Forms
             this.TblProject.ColumnCount = 2;
             this.TblProject.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TblProject.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.TblProject.Controls.Add(this.TbExecutableArgs, 0, 3);
+            this.TblProject.Controls.Add(this.PnlPath, 1, 1);
+            this.TblProject.Controls.Add(this.TbExecutableArgs, 1, 3);
             this.TblProject.Controls.Add(this.LblExecutableArgs, 0, 3);
-            this.TblProject.Controls.Add(this.TbExecutable, 1, 2);
             this.TblProject.Controls.Add(this.LblExecutable, 0, 2);
-            this.TblProject.Controls.Add(this.TbPath, 1, 1);
             this.TblProject.Controls.Add(this.LblPath, 0, 1);
             this.TblProject.Controls.Add(this.LblName, 0, 0);
             this.TblProject.Controls.Add(this.TbName, 1, 0);
             this.TblProject.Controls.Add(this.PnlControls, 0, 4);
+            this.TblProject.Controls.Add(this.CbExecutable, 1, 2);
             this.TblProject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TblProject.Location = new System.Drawing.Point(0, 0);
             this.TblProject.Margin = new System.Windows.Forms.Padding(0);
@@ -75,6 +79,39 @@ namespace ProjectRunner.Desktop.Forms
             this.TblProject.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.TblProject.Size = new System.Drawing.Size(676, 283);
             this.TblProject.TabIndex = 0;
+            // 
+            // PnlPath
+            // 
+            this.PnlPath.Controls.Add(this.BtnFileBrowseDialog);
+            this.PnlPath.Controls.Add(this.TbPath);
+            this.PnlPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlPath.Location = new System.Drawing.Point(137, 52);
+            this.PnlPath.Margin = new System.Windows.Forms.Padding(2);
+            this.PnlPath.Name = "PnlPath";
+            this.PnlPath.Size = new System.Drawing.Size(537, 46);
+            this.PnlPath.TabIndex = 10;
+            // 
+            // BtnFileBrowseDialog
+            // 
+            this.BtnFileBrowseDialog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnFileBrowseDialog.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnFileBrowseDialog.Location = new System.Drawing.Point(497, 5);
+            this.BtnFileBrowseDialog.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnFileBrowseDialog.Name = "BtnFileBrowseDialog";
+            this.BtnFileBrowseDialog.Size = new System.Drawing.Size(32, 35);
+            this.BtnFileBrowseDialog.TabIndex = 1;
+            this.BtnFileBrowseDialog.Text = "...";
+            this.BtnFileBrowseDialog.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnFileBrowseDialog.UseVisualStyleBackColor = false;
+            this.BtnFileBrowseDialog.Click += new System.EventHandler(this.BtnFileBrowseDialog_Click);
+            // 
+            // TbPath
+            // 
+            this.TbPath.Location = new System.Drawing.Point(3, 5);
+            this.TbPath.Margin = new System.Windows.Forms.Padding(2);
+            this.TbPath.Name = "TbPath";
+            this.TbPath.Size = new System.Drawing.Size(480, 35);
+            this.TbPath.TabIndex = 0;
             // 
             // TbExecutableArgs
             // 
@@ -97,15 +134,6 @@ namespace ProjectRunner.Desktop.Forms
             this.LblExecutableArgs.Text = "Executable Args";
             this.LblExecutableArgs.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // TbExecutable
-            // 
-            this.TbExecutable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TbExecutable.Location = new System.Drawing.Point(135, 106);
-            this.TbExecutable.Margin = new System.Windows.Forms.Padding(0, 6, 10, 0);
-            this.TbExecutable.Name = "TbExecutable";
-            this.TbExecutable.Size = new System.Drawing.Size(531, 35);
-            this.TbExecutable.TabIndex = 5;
-            // 
             // LblExecutable
             // 
             this.LblExecutable.AutoSize = true;
@@ -117,15 +145,6 @@ namespace ProjectRunner.Desktop.Forms
             this.LblExecutable.TabIndex = 4;
             this.LblExecutable.Text = "Executable";
             this.LblExecutable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TbPath
-            // 
-            this.TbPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TbPath.Location = new System.Drawing.Point(135, 56);
-            this.TbPath.Margin = new System.Windows.Forms.Padding(0, 6, 10, 0);
-            this.TbPath.Name = "TbPath";
-            this.TbPath.Size = new System.Drawing.Size(531, 35);
-            this.TbPath.TabIndex = 3;
             // 
             // LblPath
             // 
@@ -182,6 +201,15 @@ namespace ProjectRunner.Desktop.Forms
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // CbExecutable
+            // 
+            this.CbExecutable.FormattingEnabled = true;
+            this.CbExecutable.Location = new System.Drawing.Point(135, 106);
+            this.CbExecutable.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.CbExecutable.Name = "CbExecutable";
+            this.CbExecutable.Size = new System.Drawing.Size(350, 38);
+            this.CbExecutable.TabIndex = 9;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -197,6 +225,8 @@ namespace ProjectRunner.Desktop.Forms
             this.Text = "Insert Project";
             this.TblProject.ResumeLayout(false);
             this.TblProject.PerformLayout();
+            this.PnlPath.ResumeLayout(false);
+            this.PnlPath.PerformLayout();
             this.PnlControls.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -210,12 +240,15 @@ namespace ProjectRunner.Desktop.Forms
         private System.Windows.Forms.TextBox TbName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label LblPath;
-        private System.Windows.Forms.TextBox TbExecutable;
         private System.Windows.Forms.Label LblExecutable;
-        private System.Windows.Forms.TextBox TbPath;
         private System.Windows.Forms.Panel PnlControls;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.TextBox TbExecutableArgs;
         private System.Windows.Forms.Label LblExecutableArgs;
+        private System.Windows.Forms.ComboBox CbExecutable;
+        private System.Windows.Forms.Panel PnlPath;
+        private System.Windows.Forms.Button BtnFileBrowseDialog;
+        private System.Windows.Forms.TextBox TbPath;
+        private System.Windows.Forms.FolderBrowserDialog FBDPath;
     }
 }

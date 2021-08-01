@@ -54,9 +54,11 @@ namespace ProjectRunner.Desktop.UserControls
             // LblName
             // 
             this.LblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblName.Font = new System.Drawing.Font("Segoe UI", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblName.Location = new System.Drawing.Point(0, 0);
             this.LblName.Margin = new System.Windows.Forms.Padding(0);
             this.LblName.Name = "LblName";
+            this.LblName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.LblName.Size = new System.Drawing.Size(298, 70);
             this.LblName.TabIndex = 0;
             this.LblName.Text = "Name";
@@ -82,7 +84,7 @@ namespace ProjectRunner.Desktop.UserControls
             this.MSMainMenu.Location = new System.Drawing.Point(19, 14);
             this.MSMainMenu.Name = "MSMainMenu";
             this.MSMainMenu.Padding = new System.Windows.Forms.Padding(0);
-            this.MSMainMenu.Size = new System.Drawing.Size(325, 44);
+            this.MSMainMenu.Size = new System.Drawing.Size(115, 44);
             this.MSMainMenu.TabIndex = 0;
             this.MSMainMenu.Text = "Manage";
             // 
@@ -101,14 +103,14 @@ namespace ProjectRunner.Desktop.UserControls
             // MSIEdit
             // 
             this.MSIEdit.Name = "MSIEdit";
-            this.MSIEdit.Size = new System.Drawing.Size(315, 40);
+            this.MSIEdit.Size = new System.Drawing.Size(205, 40);
             this.MSIEdit.Text = "Edit";
             this.MSIEdit.Click += new System.EventHandler(this.MSIEdit_Click);
             // 
             // MSIRemove
             // 
             this.MSIRemove.Name = "MSIRemove";
-            this.MSIRemove.Size = new System.Drawing.Size(315, 40);
+            this.MSIRemove.Size = new System.Drawing.Size(205, 40);
             this.MSIRemove.Text = "Remove";
             this.MSIRemove.Click += new System.EventHandler(this.MSIRemove_Click);
             // 
@@ -120,6 +122,8 @@ namespace ProjectRunner.Desktop.UserControls
             this.Controls.Add(this.PnlActions);
             this.Controls.Add(this.PnlName);
             this.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximumSize = new System.Drawing.Size(480, 70);
+            this.MinimumSize = new System.Drawing.Size(480, 70);
             this.Name = "ExecutableUserControl";
             this.Size = new System.Drawing.Size(480, 70);
             this.PnlName.ResumeLayout(false);

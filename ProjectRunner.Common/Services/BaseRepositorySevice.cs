@@ -3,6 +3,8 @@ using ProjectRunner.Common.Entities;
 using ProjectRunner.Common.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace ProjectRunner.Common.Services
 {
@@ -35,7 +37,11 @@ namespace ProjectRunner.Common.Services
 
         public IList<Entity> All() => _repository.Select();
 
+        public IList<Entity> Select(Func<IQueryable<Entity>, IQueryable<Entity>> filter) => _repository.Select(filter);
+
         public Entity Find(int id) => _repository.Select(id);
+
+        public Entity Find(int id, Func<IQueryable<Entity>, IQueryable<Entity>> filter) => _repository.Select(id, filter);
 
         private static void Validate(Entity entity, AbstractValidator<Entity> validator)
         {

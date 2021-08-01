@@ -96,21 +96,21 @@ namespace ProjectRunner.Desktop.UserControls
             // MSManageEditItem
             // 
             this.MSManageEditItem.Name = "MSManageEditItem";
-            this.MSManageEditItem.Size = new System.Drawing.Size(315, 40);
+            this.MSManageEditItem.Size = new System.Drawing.Size(205, 40);
             this.MSManageEditItem.Text = "Edit";
             this.MSManageEditItem.Click += new System.EventHandler(this.MSManageEditItem_Click);
             // 
             // MSManageRemoveItem
             // 
             this.MSManageRemoveItem.Name = "MSManageRemoveItem";
-            this.MSManageRemoveItem.Size = new System.Drawing.Size(315, 40);
+            this.MSManageRemoveItem.Size = new System.Drawing.Size(205, 40);
             this.MSManageRemoveItem.Text = "Remove";
             this.MSManageRemoveItem.Click += new System.EventHandler(this.MSManageRemoveItem_Click);
             // 
             // MSManageShowLog
             // 
             this.MSManageShowLog.Name = "MSManageShowLog";
-            this.MSManageShowLog.Size = new System.Drawing.Size(315, 40);
+            this.MSManageShowLog.Size = new System.Drawing.Size(205, 40);
             this.MSManageShowLog.Text = "Log";
             this.MSManageShowLog.Click += new System.EventHandler(this.MSManageShowLog_Click);
             // 
@@ -126,13 +126,15 @@ namespace ProjectRunner.Desktop.UserControls
             // 
             // LblProject
             // 
-            this.LblProject.AutoSize = true;
             this.LblProject.Font = new System.Drawing.Font("Segoe UI", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblProject.Location = new System.Drawing.Point(15, 15);
+            this.LblProject.Location = new System.Drawing.Point(0, 0);
             this.LblProject.Margin = new System.Windows.Forms.Padding(0);
             this.LblProject.Name = "LblProject";
-            this.LblProject.Size = new System.Drawing.Size(0, 50);
+            this.LblProject.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LblProject.Size = new System.Drawing.Size(387, 80);
             this.LblProject.TabIndex = 0;
+            this.LblProject.Text = "Project";
+            this.LblProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PnlRunningLog
             // 
@@ -160,25 +162,24 @@ namespace ProjectRunner.Desktop.UserControls
             this.FLPRunningLog.Size = new System.Drawing.Size(630, 0);
             this.FLPRunningLog.TabIndex = 0;
             // 
-            // UCProject
+            // ProjectUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.PnlRunningLog);
             this.Controls.Add(this.PnlDescription);
             this.Controls.Add(this.PnlButtons);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(650, 80);
-            this.Name = "UCProject";
+            this.Name = "ProjectUserControl";
             this.Size = new System.Drawing.Size(650, 380);
             this.PnlButtons.ResumeLayout(false);
             this.MSManage.ResumeLayout(false);
             this.MSManage.PerformLayout();
             this.PnlDescription.ResumeLayout(false);
-            this.PnlDescription.PerformLayout();
             this.PnlRunningLog.ResumeLayout(false);
             this.PnlRunningLog.PerformLayout();
             this.ResumeLayout(false);

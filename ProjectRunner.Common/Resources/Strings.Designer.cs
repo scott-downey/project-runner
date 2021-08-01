@@ -70,6 +70,15 @@ namespace ProjectRunner.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Executable is invalid.
+        /// </summary>
+        internal static string ExecutableInvalid {
+            get {
+                return ResourceManager.GetString("ExecutableInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Executable is required.
         /// </summary>
         internal static string ExecutableRequired {

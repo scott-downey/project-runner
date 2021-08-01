@@ -33,7 +33,7 @@ namespace ProjectRunner.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Executable");
+                    b.ToTable("Executables");
                 });
 
             modelBuilder.Entity("ProjectRunner.Common.Entities.Project", b =>
@@ -69,19 +69,19 @@ namespace ProjectRunner.Infra.Data.Migrations
 
             modelBuilder.Entity("ProjectRunner.Common.Entities.Project", b =>
                 {
-                    b.HasOne("ProjectRunner.Common.Entities.Executable", "Executable")
+                    b.HasOne("ProjectRunner.Common.Entities.Executable", "Executables")
                         .WithMany("Projects")
                         .HasForeignKey("ExecutableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Executable");
+                    b.Navigation("Executables");
                 });
 
             modelBuilder.Entity("ProjectRunner.Common.Entities.Executable", b =>
-                {
-                    b.Navigation("Projects");
-                });
+            {
+                b.Navigation("Projects");
+            });
 #pragma warning restore 612, 618
         }
     }

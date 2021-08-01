@@ -74,7 +74,7 @@ namespace ProjectRunner.Desktop.Forms
             this.FlpProjects.AutoSize = true;
             this.FlpProjects.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlpProjects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlpProjects.Location = new System.Drawing.Point(0, 0);
+            this.FlpProjects.Location = new System.Drawing.Point(0, 70);
             this.FlpProjects.Margin = new System.Windows.Forms.Padding(0);
             this.FlpProjects.Name = "FlpProjects";
             this.FlpProjects.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
@@ -201,7 +201,7 @@ namespace ProjectRunner.Desktop.Forms
             this.FlpExecutables.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlpExecutables.BackColor = System.Drawing.Color.Transparent;
             this.FlpExecutables.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlpExecutables.Location = new System.Drawing.Point(22, 74);
+            this.FlpExecutables.Location = new System.Drawing.Point(0, 70);
             this.FlpExecutables.Margin = new System.Windows.Forms.Padding(0);
             this.FlpExecutables.Name = "FlpExecutables";
             this.FlpExecutables.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);

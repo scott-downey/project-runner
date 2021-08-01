@@ -20,8 +20,7 @@ namespace ProjectRunner.Common.Validators
                 .NotNull().WithName(Resources.Strings.Filename).WithMessage(Resources.Strings.FilenameRequired);
 
             RuleFor(c => c.ExecutableId)
-                .NotEmpty().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired)
-                .NotNull().WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableRequired);
+                .GreaterThan(0).WithName(Resources.Strings.Executable).WithMessage(Resources.Strings.ExecutableInvalid);
         }
     }
 }

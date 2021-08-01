@@ -5,6 +5,7 @@ using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
 using System;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectRunner.Desktop.Forms
 {
@@ -106,7 +107,7 @@ namespace ProjectRunner.Desktop.Forms
         private void LoadProjects()
         {
             var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
-            var projects = service.All();
+            var projects = service.Select(project => project.Include(p => p.Executable));
 
             FlpProjects.Controls.Clear();
 
@@ -118,18 +119,18 @@ namespace ProjectRunner.Desktop.Forms
 
         private void AddProject(Project project)
         {
-            ProjectUserControl ucProject = new(project) { EditActionEvent = EditProjectEvent, RemoveActionEvent = RemoveProjectEvent };
-            ucProject.MinimumSize = new(PnlProjects.Width - 70, ucProject.MinimumSize.Height);
-            ucProject.BorderStyle = BorderStyle.FixedSingle;
-            ucProject.Margin = new() { Left = 35, Top = 16 };
-            Control[] children = ucProject.Controls.Find("PnlRunningLog", true);
+            ProjectUserControl projectUserControl = new(project) { EditActionEvent = EditProjectEvent, RemoveActionEvent = RemoveProjectEvent };
+            projectUserControl.MinimumSize = new(PnlProjects.Width - 70, projectUserControl.MinimumSize.Height);
+            projectUserControl.BorderStyle = BorderStyle.FixedSingle;
+            projectUserControl.Margin = new() { Left = 35, Top = 16 };
+            Control[] children = projectUserControl.Controls.Find("PnlRunningLog", true);
 
             if (children.Length > 0)
             {
-                children[0].MinimumSize = new(ucProject.MinimumSize.Width, children[0].MinimumSize.Height);
+                children[0].MinimumSize = new(projectUserControl.MinimumSize.Width, children[0].MinimumSize.Height);
             }
 
-            FlpProjects.Controls.Add(ucProject);
+            FlpProjects.Controls.Add(projectUserControl);
         }
 
         private void BtnAddProject_Click(object sender, EventArgs e)
@@ -161,9 +162,9 @@ namespace ProjectRunner.Desktop.Forms
         private void AddExecutable(Executable executable)
         {
             ExecutableUserControl executableUserControl = new(executable) { EditActionEvent = EditExecutabletEvent, RemoveActionEvent = RemoveExecutableEvent };
-            executableUserControl.MinimumSize = new(PnlExecutables.Width - 45, executableUserControl.MinimumSize.Height);
+            executableUserControl.MinimumSize = new(PnlExecutables.Width - 70, executableUserControl.MinimumSize.Height);
             executableUserControl.BorderStyle = BorderStyle.FixedSingle;
-            executableUserControl.Margin = new() { Top = 16 };
+            executableUserControl.Margin = new() { Left = 35, Top = 16 };
             FlpExecutables.Controls.Add(executableUserControl);
         }
 

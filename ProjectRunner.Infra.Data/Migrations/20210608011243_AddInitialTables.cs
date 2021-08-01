@@ -7,7 +7,7 @@ namespace ProjectRunner.Infra.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Executable",
+                name: "Executables",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -17,7 +17,7 @@ namespace ProjectRunner.Infra.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Executable", x => x.Id);
+                    table.PrimaryKey("PK_Executables", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,9 +35,9 @@ namespace ProjectRunner.Infra.Data.Migrations
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Projects_Executable_ExecutableId",
+                        name: "FK_Projects_Executables_ExecutableId",
                         column: x => x.ExecutableId,
-                        principalTable: "Executable",
+                        principalTable: "Executables",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -54,7 +54,7 @@ namespace ProjectRunner.Infra.Data.Migrations
                 name: "Projects");
 
             migrationBuilder.DropTable(
-                name: "Executable");
+                name: "Executables");
         }
     }
 }

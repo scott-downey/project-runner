@@ -120,6 +120,9 @@
   <data name="Executable" xml:space="preserve">
     <value>Executável</value>
   </data>
+  <data name="ExecutableInvalid" xml:space="preserve">
+    <value>Executável é inválido</value>
+  </data>
   <data name="ExecutableRequired" xml:space="preserve">
     <value>Executável é obrigatório</value>
   </data>

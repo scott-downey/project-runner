@@ -9,6 +9,7 @@ namespace ProjectRunner.Infra.Data.Context
 {
     public class SQLiteContext : DbContext
     {
+        public DbSet<Executable> Executables { get; set; }
         public DbSet<Project> Projects { get; set; }
 
         public SQLiteContext() : base()
