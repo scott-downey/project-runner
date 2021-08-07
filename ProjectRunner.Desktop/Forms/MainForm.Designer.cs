@@ -74,11 +74,11 @@ namespace ProjectRunner.Desktop.Forms
             this.FlpProjects.AutoSize = true;
             this.FlpProjects.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlpProjects.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlpProjects.Location = new System.Drawing.Point(0, 70);
+            this.FlpProjects.Location = new System.Drawing.Point(0, 86);
             this.FlpProjects.Margin = new System.Windows.Forms.Padding(0);
             this.FlpProjects.Name = "FlpProjects";
-            this.FlpProjects.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.FlpProjects.Size = new System.Drawing.Size(0, 15);
+            this.FlpProjects.Padding = new System.Windows.Forms.Padding(0, 0, 0, 18);
+            this.FlpProjects.Size = new System.Drawing.Size(0, 18);
             this.FlpProjects.TabIndex = 2;
             // 
             // PnlProjects
@@ -88,10 +88,10 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlProjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlProjects.Controls.Add(this.FlpProjects);
             this.PnlProjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlProjects.Location = new System.Drawing.Point(10, 10);
-            this.PnlProjects.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.PnlProjects.Location = new System.Drawing.Point(12, 12);
+            this.PnlProjects.Margin = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.PnlProjects.Name = "PnlProjects";
-            this.PnlProjects.Size = new System.Drawing.Size(747, 468);
+            this.PnlProjects.Size = new System.Drawing.Size(920, 577);
             this.PnlProjects.TabIndex = 3;
             // 
             // NotifyIcon
@@ -111,17 +111,18 @@ namespace ProjectRunner.Desktop.Forms
             this.TabControl.Name = "TabControl";
             this.TabControl.Padding = new System.Drawing.Point(10, 3);
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(775, 536);
+            this.TabControl.Size = new System.Drawing.Size(964, 661);
             this.TabControl.TabIndex = 4;
             // 
             // TpProjects
             // 
             this.TpProjects.Controls.Add(this.PnlProjectsTop);
             this.TpProjects.Controls.Add(this.PnlProjects);
-            this.TpProjects.Location = new System.Drawing.Point(4, 44);
+            this.TpProjects.Location = new System.Drawing.Point(10, 50);
+            this.TpProjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TpProjects.Name = "TpProjects";
-            this.TpProjects.Padding = new System.Windows.Forms.Padding(10);
-            this.TpProjects.Size = new System.Drawing.Size(767, 488);
+            this.TpProjects.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.TpProjects.Size = new System.Drawing.Size(944, 601);
             this.TpProjects.TabIndex = 0;
             this.TpProjects.Text = "Projects";
             this.TpProjects.UseVisualStyleBackColor = true;
@@ -131,18 +132,19 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlProjectsTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlProjectsTop.Controls.Add(this.BtnAddProject);
             this.PnlProjectsTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlProjectsTop.Location = new System.Drawing.Point(10, 10);
+            this.PnlProjectsTop.Location = new System.Drawing.Point(12, 12);
             this.PnlProjectsTop.Margin = new System.Windows.Forms.Padding(0);
             this.PnlProjectsTop.Name = "PnlProjectsTop";
-            this.PnlProjectsTop.Size = new System.Drawing.Size(747, 60);
+            this.PnlProjectsTop.Size = new System.Drawing.Size(920, 74);
             this.PnlProjectsTop.TabIndex = 4;
             // 
             // BtnAddProject
             // 
             this.BtnAddProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnAddProject.Location = new System.Drawing.Point(604, 10);
+            this.BtnAddProject.Location = new System.Drawing.Point(742, 12);
+            this.BtnAddProject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAddProject.Name = "BtnAddProject";
-            this.BtnAddProject.Size = new System.Drawing.Size(131, 40);
+            this.BtnAddProject.Size = new System.Drawing.Size(164, 49);
             this.BtnAddProject.TabIndex = 0;
             this.BtnAddProject.Text = "Add";
             this.BtnAddProject.UseVisualStyleBackColor = true;
@@ -152,10 +154,11 @@ namespace ProjectRunner.Desktop.Forms
             // 
             this.TpExecutables.Controls.Add(this.PnlExecutablesTop);
             this.TpExecutables.Controls.Add(this.PnlExecutables);
-            this.TpExecutables.Location = new System.Drawing.Point(4, 44);
+            this.TpExecutables.Location = new System.Drawing.Point(10, 50);
+            this.TpExecutables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TpExecutables.Name = "TpExecutables";
-            this.TpExecutables.Padding = new System.Windows.Forms.Padding(10);
-            this.TpExecutables.Size = new System.Drawing.Size(767, 488);
+            this.TpExecutables.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.TpExecutables.Size = new System.Drawing.Size(949, 601);
             this.TpExecutables.TabIndex = 1;
             this.TpExecutables.Text = "Executables";
             this.TpExecutables.UseVisualStyleBackColor = true;
@@ -165,18 +168,19 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlExecutablesTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlExecutablesTop.Controls.Add(this.BtnAddExecutable);
             this.PnlExecutablesTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlExecutablesTop.Location = new System.Drawing.Point(10, 10);
+            this.PnlExecutablesTop.Location = new System.Drawing.Point(12, 12);
             this.PnlExecutablesTop.Margin = new System.Windows.Forms.Padding(0);
             this.PnlExecutablesTop.Name = "PnlExecutablesTop";
-            this.PnlExecutablesTop.Size = new System.Drawing.Size(747, 60);
+            this.PnlExecutablesTop.Size = new System.Drawing.Size(925, 74);
             this.PnlExecutablesTop.TabIndex = 5;
             // 
             // BtnAddExecutable
             // 
             this.BtnAddExecutable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnAddExecutable.Location = new System.Drawing.Point(604, 10);
+            this.BtnAddExecutable.Location = new System.Drawing.Point(747, 12);
+            this.BtnAddExecutable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAddExecutable.Name = "BtnAddExecutable";
-            this.BtnAddExecutable.Size = new System.Drawing.Size(131, 40);
+            this.BtnAddExecutable.Size = new System.Drawing.Size(164, 49);
             this.BtnAddExecutable.TabIndex = 0;
             this.BtnAddExecutable.Text = "Add";
             this.BtnAddExecutable.UseVisualStyleBackColor = true;
@@ -189,10 +193,10 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlExecutables.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlExecutables.Controls.Add(this.FlpExecutables);
             this.PnlExecutables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlExecutables.Location = new System.Drawing.Point(10, 10);
+            this.PnlExecutables.Location = new System.Drawing.Point(12, 12);
             this.PnlExecutables.Margin = new System.Windows.Forms.Padding(0);
             this.PnlExecutables.Name = "PnlExecutables";
-            this.PnlExecutables.Size = new System.Drawing.Size(747, 468);
+            this.PnlExecutables.Size = new System.Drawing.Size(925, 577);
             this.PnlExecutables.TabIndex = 4;
             // 
             // FlpExecutables
@@ -201,20 +205,21 @@ namespace ProjectRunner.Desktop.Forms
             this.FlpExecutables.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlpExecutables.BackColor = System.Drawing.Color.Transparent;
             this.FlpExecutables.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlpExecutables.Location = new System.Drawing.Point(0, 70);
+            this.FlpExecutables.Location = new System.Drawing.Point(0, 86);
             this.FlpExecutables.Margin = new System.Windows.Forms.Padding(0);
             this.FlpExecutables.Name = "FlpExecutables";
-            this.FlpExecutables.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.FlpExecutables.Size = new System.Drawing.Size(0, 15);
+            this.FlpExecutables.Padding = new System.Windows.Forms.Padding(0, 0, 0, 18);
+            this.FlpExecutables.Size = new System.Drawing.Size(0, 18);
             this.FlpExecutables.TabIndex = 2;
             // 
             // TpSettings
             // 
             this.TpSettings.Controls.Add(this.TlpSettings);
-            this.TpSettings.Location = new System.Drawing.Point(4, 44);
+            this.TpSettings.Location = new System.Drawing.Point(10, 50);
+            this.TpSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TpSettings.Name = "TpSettings";
-            this.TpSettings.Padding = new System.Windows.Forms.Padding(10);
-            this.TpSettings.Size = new System.Drawing.Size(767, 488);
+            this.TpSettings.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.TpSettings.Size = new System.Drawing.Size(949, 601);
             this.TpSettings.TabIndex = 2;
             this.TpSettings.Text = "Settings";
             this.TpSettings.UseVisualStyleBackColor = true;
@@ -231,24 +236,25 @@ namespace ProjectRunner.Desktop.Forms
             this.TlpSettings.Controls.Add(this.PnlSettingsMinimizeOptions, 1, 0);
             this.TlpSettings.Controls.Add(this.PnlSettingsButtons, 0, 2);
             this.TlpSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TlpSettings.Location = new System.Drawing.Point(10, 10);
+            this.TlpSettings.Location = new System.Drawing.Point(12, 12);
             this.TlpSettings.Margin = new System.Windows.Forms.Padding(0);
             this.TlpSettings.Name = "TlpSettings";
             this.TlpSettings.RowCount = 4;
-            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.TlpSettings.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TlpSettings.Size = new System.Drawing.Size(747, 468);
+            this.TlpSettings.Size = new System.Drawing.Size(925, 577);
             this.TlpSettings.TabIndex = 1;
             // 
             // LblSettingsClose
             // 
             this.LblSettingsClose.AutoSize = true;
             this.LblSettingsClose.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblSettingsClose.Location = new System.Drawing.Point(3, 74);
+            this.LblSettingsClose.Location = new System.Drawing.Point(4, 91);
+            this.LblSettingsClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSettingsClose.Name = "LblSettingsClose";
-            this.LblSettingsClose.Size = new System.Drawing.Size(367, 74);
+            this.LblSettingsClose.Size = new System.Drawing.Size(454, 91);
             this.LblSettingsClose.TabIndex = 3;
             this.LblSettingsClose.Text = "Close to stray";
             this.LblSettingsClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -258,18 +264,19 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlSettingsCloseOptions.Controls.Add(this.RbSettingsCloseNo);
             this.PnlSettingsCloseOptions.Controls.Add(this.RbSettingsCloseYes);
             this.PnlSettingsCloseOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlSettingsCloseOptions.Location = new System.Drawing.Point(376, 77);
+            this.PnlSettingsCloseOptions.Location = new System.Drawing.Point(466, 95);
+            this.PnlSettingsCloseOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlSettingsCloseOptions.Name = "PnlSettingsCloseOptions";
-            this.PnlSettingsCloseOptions.Size = new System.Drawing.Size(368, 68);
+            this.PnlSettingsCloseOptions.Size = new System.Drawing.Size(455, 83);
             this.PnlSettingsCloseOptions.TabIndex = 4;
             // 
             // RbSettingsCloseNo
             // 
             this.RbSettingsCloseNo.AutoSize = true;
-            this.RbSettingsCloseNo.Location = new System.Drawing.Point(113, 17);
+            this.RbSettingsCloseNo.Location = new System.Drawing.Point(141, 21);
             this.RbSettingsCloseNo.Margin = new System.Windows.Forms.Padding(0);
             this.RbSettingsCloseNo.Name = "RbSettingsCloseNo";
-            this.RbSettingsCloseNo.Size = new System.Drawing.Size(66, 34);
+            this.RbSettingsCloseNo.Size = new System.Drawing.Size(84, 41);
             this.RbSettingsCloseNo.TabIndex = 2;
             this.RbSettingsCloseNo.TabStop = true;
             this.RbSettingsCloseNo.Text = "No";
@@ -278,10 +285,10 @@ namespace ProjectRunner.Desktop.Forms
             // RbSettingsCloseYes
             // 
             this.RbSettingsCloseYes.AutoSize = true;
-            this.RbSettingsCloseYes.Location = new System.Drawing.Point(12, 17);
+            this.RbSettingsCloseYes.Location = new System.Drawing.Point(15, 21);
             this.RbSettingsCloseYes.Margin = new System.Windows.Forms.Padding(0);
             this.RbSettingsCloseYes.Name = "RbSettingsCloseYes";
-            this.RbSettingsCloseYes.Size = new System.Drawing.Size(68, 34);
+            this.RbSettingsCloseYes.Size = new System.Drawing.Size(86, 41);
             this.RbSettingsCloseYes.TabIndex = 1;
             this.RbSettingsCloseYes.TabStop = true;
             this.RbSettingsCloseYes.Text = "Yes";
@@ -291,9 +298,10 @@ namespace ProjectRunner.Desktop.Forms
             // 
             this.LblSettingsMinimize.AutoSize = true;
             this.LblSettingsMinimize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblSettingsMinimize.Location = new System.Drawing.Point(3, 0);
+            this.LblSettingsMinimize.Location = new System.Drawing.Point(4, 0);
+            this.LblSettingsMinimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSettingsMinimize.Name = "LblSettingsMinimize";
-            this.LblSettingsMinimize.Size = new System.Drawing.Size(367, 74);
+            this.LblSettingsMinimize.Size = new System.Drawing.Size(454, 91);
             this.LblSettingsMinimize.TabIndex = 0;
             this.LblSettingsMinimize.Text = "Minimize to stray";
             this.LblSettingsMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -303,18 +311,19 @@ namespace ProjectRunner.Desktop.Forms
             this.PnlSettingsMinimizeOptions.Controls.Add(this.RbSettingsMinimizeNo);
             this.PnlSettingsMinimizeOptions.Controls.Add(this.RbSettingsMinimizeYes);
             this.PnlSettingsMinimizeOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlSettingsMinimizeOptions.Location = new System.Drawing.Point(376, 3);
+            this.PnlSettingsMinimizeOptions.Location = new System.Drawing.Point(466, 4);
+            this.PnlSettingsMinimizeOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlSettingsMinimizeOptions.Name = "PnlSettingsMinimizeOptions";
-            this.PnlSettingsMinimizeOptions.Size = new System.Drawing.Size(368, 68);
+            this.PnlSettingsMinimizeOptions.Size = new System.Drawing.Size(455, 83);
             this.PnlSettingsMinimizeOptions.TabIndex = 2;
             // 
             // RbSettingsMinimizeNo
             // 
             this.RbSettingsMinimizeNo.AutoSize = true;
-            this.RbSettingsMinimizeNo.Location = new System.Drawing.Point(113, 17);
+            this.RbSettingsMinimizeNo.Location = new System.Drawing.Point(141, 21);
             this.RbSettingsMinimizeNo.Margin = new System.Windows.Forms.Padding(0);
             this.RbSettingsMinimizeNo.Name = "RbSettingsMinimizeNo";
-            this.RbSettingsMinimizeNo.Size = new System.Drawing.Size(66, 34);
+            this.RbSettingsMinimizeNo.Size = new System.Drawing.Size(84, 41);
             this.RbSettingsMinimizeNo.TabIndex = 2;
             this.RbSettingsMinimizeNo.TabStop = true;
             this.RbSettingsMinimizeNo.Text = "No";
@@ -323,10 +332,10 @@ namespace ProjectRunner.Desktop.Forms
             // RbSettingsMinimizeYes
             // 
             this.RbSettingsMinimizeYes.AutoSize = true;
-            this.RbSettingsMinimizeYes.Location = new System.Drawing.Point(12, 17);
+            this.RbSettingsMinimizeYes.Location = new System.Drawing.Point(15, 21);
             this.RbSettingsMinimizeYes.Margin = new System.Windows.Forms.Padding(0);
             this.RbSettingsMinimizeYes.Name = "RbSettingsMinimizeYes";
-            this.RbSettingsMinimizeYes.Size = new System.Drawing.Size(68, 34);
+            this.RbSettingsMinimizeYes.Size = new System.Drawing.Size(86, 41);
             this.RbSettingsMinimizeYes.TabIndex = 1;
             this.RbSettingsMinimizeYes.TabStop = true;
             this.RbSettingsMinimizeYes.Text = "Yes";
@@ -337,17 +346,19 @@ namespace ProjectRunner.Desktop.Forms
             this.TlpSettings.SetColumnSpan(this.PnlSettingsButtons, 2);
             this.PnlSettingsButtons.Controls.Add(this.BtnSaveSettings);
             this.PnlSettingsButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlSettingsButtons.Location = new System.Drawing.Point(3, 151);
+            this.PnlSettingsButtons.Location = new System.Drawing.Point(4, 186);
+            this.PnlSettingsButtons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlSettingsButtons.Name = "PnlSettingsButtons";
-            this.PnlSettingsButtons.Size = new System.Drawing.Size(741, 68);
+            this.PnlSettingsButtons.Size = new System.Drawing.Size(917, 83);
             this.PnlSettingsButtons.TabIndex = 5;
             // 
             // BtnSaveSettings
             // 
             this.BtnSaveSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSaveSettings.Location = new System.Drawing.Point(598, 14);
+            this.BtnSaveSettings.Location = new System.Drawing.Point(739, 16);
+            this.BtnSaveSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnSaveSettings.Name = "BtnSaveSettings";
-            this.BtnSaveSettings.Size = new System.Drawing.Size(131, 40);
+            this.BtnSaveSettings.Size = new System.Drawing.Size(164, 49);
             this.BtnSaveSettings.TabIndex = 0;
             this.BtnSaveSettings.Text = "Save";
             this.BtnSaveSettings.UseVisualStyleBackColor = true;
@@ -355,14 +366,15 @@ namespace ProjectRunner.Desktop.Forms
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(775, 536);
+            this.ClientSize = new System.Drawing.Size(964, 661);
             this.Controls.Add(this.TabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(799, 1198);
-            this.MinimumSize = new System.Drawing.Size(799, 598);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(992, 1459);
+            this.MinimumSize = new System.Drawing.Size(992, 719);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Runner";

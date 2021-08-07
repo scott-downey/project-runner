@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner.Common", "Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRunner.Infra.Data", "ProjectRunner.Infra.Data\ProjectRunner.Infra.Data.csproj", "{79B4C60A-9CFC-408E-B993-870DB631AF4B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProjectRunner.Setup", "ProjectRunner.Setup\ProjectRunner.Setup.vdproj", "{073EFDA5-EF46-40F7-ABF2-21CBA6DBC3C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B4C60A-9CFC-408E-B993-870DB631AF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073EFDA5-EF46-40F7-ABF2-21CBA6DBC3C1}.Debug|Any CPU.ActiveCfg = Debug
+		{073EFDA5-EF46-40F7-ABF2-21CBA6DBC3C1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

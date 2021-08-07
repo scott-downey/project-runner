@@ -4,8 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon />
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <Win32Resource />
+    <PackageId>ProjectRunner</PackageId>
+    <Authors>Eliton Santos</Authors>
+    <Company>ProjectRunner</Company>
+    <Product>ProjectRunner</Product>
+    <AssemblyName>ProjectRunner</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
