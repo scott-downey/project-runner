@@ -197,9 +197,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ProjectRunner"
+        "ProductName" = "8:Project Runner"
         "ProductCode" = "8:{709592B9-6892-46DE-BDD0-220A92B686CA}"
-        "PackageCode" = "8:{B2B35903-4650-43B3-90EF-40A903AE44A5}"
+        "PackageCode" = "8:{327B39B7-58B1-4AC5-867F-6293EE074943}"
         "UpgradeCode" = "8:{1AA6DFB5-4A77-4E28-97D4-37CAEA66B81F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -207,7 +207,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:ProjectRunner"
+        "Manufacturer" = "8:Project Runner"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Project Runner"
@@ -321,7 +321,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_148DF4258D914204B78C582F89C24EAE"
             {
-            "Name" = "8:ProjectRunner"
+            "Name" = "8:Project Runner"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -335,7 +335,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_51BDCE075C5B4678A7A45AB593464862"
             {
-            "Name" = "8:ProjectRunner"
+            "Name" = "8:Project Runner"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -748,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_50AB7EB7FCB346868FC443EC3748A83B"
             {
-            "SourcePath" = "8:..\\ProjectRunner.Desktop\\obj\\Release\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\ProjectRunner.Desktop\\bin\\Release\\net5.0-windows\\publish\\ProjectRunner.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7B588D4301684FED9C6231D4226CED3B"
