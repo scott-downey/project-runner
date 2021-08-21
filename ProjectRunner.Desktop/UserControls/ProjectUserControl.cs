@@ -19,7 +19,6 @@ namespace ProjectRunner.Desktop.UserControls
     {
         public EditActionEvent EditActionEvent;
         public RemoveActionEvent RemoveActionEvent;
-        private ILogger _logger;
         private Project _project;
         private int _proccesIndex;
 
@@ -27,7 +26,6 @@ namespace ProjectRunner.Desktop.UserControls
         {
             InitializeComponent();
 
-            _logger = new Logger(FLPRunningLog);
             SetProject(project);
             SetActionButtonText(false);
             MSManageItems.Text = Resources.Strings.Manage;
@@ -43,7 +41,7 @@ namespace ProjectRunner.Desktop.UserControls
 
             if (_proccesIndex == 0)
             {
-                _proccesIndex = ProjectRunnerService.Create(new ProjectRunnerDto { Project = project, Logger = _logger });
+                _proccesIndex = ProjectRunnerService.Create(new ProjectRunnerDto { Project = project });
             }
             else
             {
@@ -81,7 +79,6 @@ namespace ProjectRunner.Desktop.UserControls
 
         private void MSManageShowLog_Click(object sender, EventArgs e)
         {
-            PnlRunningLog.Visible = !PnlRunningLog.Visible;
         }
 
         private async void BtnAction_Click(object sender, EventArgs e)
