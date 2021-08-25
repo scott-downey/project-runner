@@ -4,15 +4,14 @@ using ProjectRunner.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace ProjectRunner.Common.Services
 {
-    public class BaseService<Entity> : IRepositoryService<Entity> where Entity : BaseEntity
+    public class BaseRepositoryService<Entity> : IRepositoryService<Entity> where Entity : BaseEntity
     {
         private readonly IRepository<Entity> _repository;
 
-        public BaseService(IRepository<Entity> baseRepository)
+        public BaseRepositoryService(IRepository<Entity> baseRepository)
         {
             _repository = baseRepository;
         }

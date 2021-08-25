@@ -106,7 +106,7 @@ namespace ProjectRunner.Desktop.Forms
         #region Project Events and Hanlders
         private void LoadProjects()
         {
-            var service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+            var service = new BaseRepositoryService<Project>(new BaseRepository<Project>(new SQLiteContext()));
             var projects = service.Select(project => project.Include(p => p.Executable));
 
             FlpProjects.Controls.Clear();
@@ -170,7 +170,7 @@ namespace ProjectRunner.Desktop.Forms
 
         private void LoadExecutables()
         {
-            var service = new BaseService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
+            var service = new BaseRepositoryService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
             var executables = service.All();
 
             FlpExecutables.Controls.Clear();

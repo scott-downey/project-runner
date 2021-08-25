@@ -9,5 +9,6 @@
 #nullable enable
         public string? ExecutableArguments { get; set; }
 #nullable disable
+        public int? ProcessId { get; set; }
     }
 }

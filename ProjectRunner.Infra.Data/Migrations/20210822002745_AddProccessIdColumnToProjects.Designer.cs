@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectRunner.Infra.Data.Context;
 
 namespace ProjectRunner.Infra.Data.Migrations
 {
     [DbContext(typeof(SQLiteContext))]
-    partial class SQLiteContextModelSnapshot : ModelSnapshot
+    [Migration("20210822002745_AddProccessIdColumnToProjects")]
+    partial class AddProccessIdColumnToProjects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,13 +76,13 @@ namespace ProjectRunner.Infra.Data.Migrations
 
             modelBuilder.Entity("ProjectRunner.Common.Entities.Project", b =>
                 {
-                    b.HasOne("ProjectRunner.Common.Entities.Executable", "Executables")
+                    b.HasOne("ProjectRunner.Common.Entities.Executable", "Executable")
                         .WithMany("Projects")
                         .HasForeignKey("ExecutableId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Executables");
+                    b.Navigation("Executable");
                 });
 
             modelBuilder.Entity("ProjectRunner.Common.Entities.Executable", b =>

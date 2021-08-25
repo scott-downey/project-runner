@@ -1,10 +1,8 @@
 ﻿using ProjectRunner.Common.Dto;
 using ProjectRunner.Common.Tools;
 using ProjectRunner.Common.Entities;
-using ProjectRunner.Common.Interfaces;
 using ProjectRunner.Common.Services;
 using ProjectRunner.Desktop.Forms;
-using ProjectRunner.Desktop.Tools;
 using ProjectRunner.Infra.Data.Context;
 using ProjectRunner.Infra.Data.Repository;
 using System;
@@ -21,13 +19,17 @@ namespace ProjectRunner.Desktop.UserControls
         public RemoveActionEvent RemoveActionEvent;
         private Project _project;
         private int _proccesIndex;
+        private bool _isRunning;
 
         public ProjectUserControl(Project project)
         {
             InitializeComponent();
 
+            BaseRepositoryService<Project> service = new BaseRepositoryService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+            ProjectRunnerService.SetRepositoryService(service);
             SetProject(project);
-            SetActionButtonText(false);
+            ValidateProccessRunnig();
+            SetActionButtonText();
             MSManageItems.Text = Resources.Strings.Manage;
             MSManageEditItem.Text = Resources.Strings.Edit;
             MSManageRemoveItem.Text = Resources.Strings.Remove;
@@ -62,7 +64,7 @@ namespace ProjectRunner.Desktop.UserControls
 
             if (dialogResult == DialogResult.Yes)
             {
-                BaseService<Project> service = new(new BaseRepository<Project>(new SQLiteContext()));
+                BaseRepositoryService<Project> service = new(new BaseRepository<Project>(new SQLiteContext()));
 
                 try
                 {
@@ -83,34 +85,47 @@ namespace ProjectRunner.Desktop.UserControls
 
         private async void BtnAction_Click(object sender, EventArgs e)
         {
-            bool isRunning = ProjectRunnerService.Get(_proccesIndex).IsRunning;
-
             try
             {
-                if (isRunning)
+                if (_isRunning)
                 {
                     ProjectRunnerService.Stop(_proccesIndex);
-                    isRunning = false;
+                    _isRunning = false;
                 }
                 else
                 {
-                    SetActionButtonText(isRunning: true);
-                    await ProjectRunnerService.Run(_proccesIndex);
-                    ProjectRunnerService.Stop(_proccesIndex);
+                    _isRunning = true;
+                    SetActionButtonText();
+
+                    await ProjectRunnerService.Run(_proccesIndex)
+                        .ContinueWith(t => {
+                            ProjectRunnerService.Stop(_proccesIndex);
+                            _isRunning = false;
+                        });
                 }
             }
             catch (Exception ex)
             {
-                isRunning = false;
+                _isRunning = false;
                 MessageBox.Show(Utils.HandleExceptionMessage(ex));
             }
 
-            SetActionButtonText(isRunning);
+            SetActionButtonText();
         }
 
-        private void SetActionButtonText(bool isRunning)
+        private void SetActionButtonText()
         {
-            BtnAction.Text = isRunning ? Resources.Strings.Stop : Resources.Strings.Run;
+            BtnAction.Text = _isRunning ? Resources.Strings.Stop : Resources.Strings.Run;
+        }
+
+        private void ValidateProccessRunnig()
+        {
+            _isRunning = false;
+
+            if (_project.ProcessId != null)
+            {
+                _isRunning = ProjectRunnerService.ProcessExists(_project.ProcessId.Value);
+            }
         }
 
     }

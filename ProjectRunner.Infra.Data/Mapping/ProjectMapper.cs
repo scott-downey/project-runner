@@ -30,6 +30,10 @@ namespace ProjectRunner.Infra.Data.Mapping
                 .IsRequired(false)
                 .HasColumnName("ExecutableArguments")
                 .HasColumnType("Varchar(255)");
+            builder.Property(prop => prop.ProcessId)
+                .IsRequired(false)
+                .HasColumnName("ProcessId")
+                .HasColumnType("INTEGER");
             builder.HasOne(p => p.Executable)
                 .WithMany(e => e.Projects)
                 .IsRequired()
