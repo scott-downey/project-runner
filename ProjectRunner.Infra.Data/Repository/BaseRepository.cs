@@ -5,7 +5,6 @@ using ProjectRunner.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace ProjectRunner.Infra.Data.Repository
 {

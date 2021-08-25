@@ -42,7 +42,7 @@ namespace ProjectRunner.Desktop.Forms
             LblFileName.Text = Resources.Strings.FileName;
             BtnSave.Text = Resources.Strings.Save;
 
-            _service = new BaseService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
+            _service = new BaseRepositoryService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
 
             if (executable != null)
             {

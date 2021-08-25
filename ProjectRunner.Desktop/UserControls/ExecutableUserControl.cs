@@ -23,7 +23,7 @@ namespace ProjectRunner.Desktop.UserControls
             InitializeComponent();
 
             SetExecutable(executable);
-            _service = new BaseService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
+            _service = new BaseRepositoryService<Executable>(new BaseRepository<Executable>(new SQLiteContext()));
         }
 
         private void MSIEdit_Click(object sender, EventArgs e)

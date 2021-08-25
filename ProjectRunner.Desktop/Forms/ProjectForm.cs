@@ -33,8 +33,8 @@ namespace ProjectRunner.Desktop.Forms
 
         private void Initalization(Project project = null)
         {
-            _service = new BaseService<Project>(new BaseRepository<Project>(new SQLiteContext()));
-            var executables = (new BaseService<Executable>(new BaseRepository<Executable>(new SQLiteContext()))).All();
+            _service = new BaseRepositoryService<Project>(new BaseRepository<Project>(new SQLiteContext()));
+            var executables = (new BaseRepositoryService<Executable>(new BaseRepository<Executable>(new SQLiteContext()))).All();
             CbExecutable.DataSource = executables;
             CbExecutable.DisplayMember = "Name";
             CbExecutable.ValueMember = "Id";

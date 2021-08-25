@@ -40,10 +40,9 @@ namespace ProjectRunner.Infra.Data.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        private void InitializeDatabase()
+        private static void InitializeDatabase()
         {
             Directory.CreateDirectory(Utils.DatabaseInfo.Path);
-            Database.EnsureCreated();
         }
     }
 }
