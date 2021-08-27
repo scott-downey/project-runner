@@ -8,10 +8,10 @@
     <Win32Resource />
     <PackageId>ProjectRunner</PackageId>
     <Authors>Eliton Santos</Authors>
-    <Company>ProjectRunner</Company>
+    <Company>Project Runner</Company>
     <Product>ProjectRunner</Product>
     <AssemblyName>ProjectRunner</AssemblyName>
-    <Version>1.0.1</Version>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
